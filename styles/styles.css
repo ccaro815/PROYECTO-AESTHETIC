@@ -10,7 +10,7 @@ body {
 
 header {
     background-color: #a98582;
-    padding: 30px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -137,9 +137,18 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
+
 }
 
+.facebook{/* Vector */
 
+    position: static;
+    left: 97.51%;
+    right: 0.71%;
+    top: 96.88%;
+    bottom: 1.17%;
+    background: #513A45;
+  }
 
 
 
