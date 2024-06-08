@@ -9,6 +9,13 @@ body {
     display: flex;
     flex-direction: column;
 }
+.cart-button {
+    margin-right: 10px;
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
 
 .top-header {
     display: flex;
@@ -46,7 +53,7 @@ body {
 
 .top-header .contact-info p {
     margin: 0;
-    font-size: 14px;
+    font-size: 24px;
     color: #5A0033;
 }
 
@@ -56,13 +63,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 header nav a {
     margin: 0 10px;
     text-decoration: none;
-    color: #5A0033;
+    color: #5C273F;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .search-login {
@@ -73,21 +82,20 @@ header nav a {
 .search-login input {
     padding: 5px;
     margin-right: 10px;
-    border: 1px solid #ddd;
+    border: 1px solid #FFE8ED;
     border-radius: 5px;
 }
 
 .search-login a {
     margin: 0 5px;
     padding: 5px 10px;
-    background-color: #5A0033;
-    color: white;
+    background-color: #FFE8ED;
+    color: rgba(96, 43, 67, 1);
     text-decoration: none;
     border-radius: 5px;
 }
 
 .hero {
-    background-image: url('path/to/your/image.jpg'); /* Cambia esta ruta por la de tu imagen */
     background-size: cover;
     background-position: center;
     height: 300px;
@@ -95,7 +103,6 @@ header nav a {
     align-items: center;
     justify-content: center;
 }
-
 .hero img {
     width: 100%;
     height: auto;
@@ -105,11 +112,13 @@ header nav a {
     flex: 1;
     padding: 20px;
     text-align: left;
+    font-size: 24px;
 }
 
 .content2 {
     padding: 20px;
     text-align: right;
+    font-size: 24px;
 }
 
 .footer {
