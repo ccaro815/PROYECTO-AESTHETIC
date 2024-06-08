@@ -14,40 +14,42 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 30px 20px 20px 0;
     background-color: #fff;
 }
 
 .top-header .logo img {
-    width: 50px;
-    height: 100px;
+    position: relative;
+    width: 150px;
+    height: 138px;
+    left: 72px;
+    top: 17px;
+    
+    mix-blend-mode: darken;
+    border-radius: 100px;    
 }
 
 .top-header .title {
     text-align: center;
-    flex-grow: 1;
+    flex-grow: 0;
+
 }
 
-.top-header .title h1 {
+.top-header .title img {
+    width: 487px;
+    
     margin: 0;
     font-size: 50px;
-    color: #5A0033;
-}
-
-.top-header .title p {
-    margin: 0;
-    font-size: 30px;
-    color: #5A0033;
 }
 
 .top-header .contact-info {
     text-align: right;
+    flex-grow: 50px;
 }
 
-.top-header .contact-info p {
+.top-header .contact-info img {
     margin: 0;
     font-size: 14px;
-    color: #5A0033;
 }
 
 header {
