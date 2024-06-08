@@ -1,154 +1,127 @@
-body {
-    font-family: Arial, sans-serif;
+html, body {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    background-color: #f2ede9;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+}
+
+.top-header .logo img {
+    width: 50px;
+    height: 100px;
+}
+
+.top-header .title {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.top-header .title h1 {
+    margin: 0;
+    font-size: 50px;
+    color: #5A0033;
+}
+
+.top-header .title p {
+    margin: 0;
+    font-size: 30px;
+    color: #5A0033;
+}
+
+.top-header .contact-info {
+    text-align: right;
+}
+
+.top-header .contact-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #5A0033;
 }
 
 header {
-    background-color: #a98582;
+    background-color: #D08590;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
-    position: fixed;
-    width: 98%;
-    top: 0;
-    z-index: 1000;
+    margin-top: 60px;
 }
 
-header .menu {
-    display: flex;
-}
-
-header .menu a {
+header nav a {
     margin: 0 10px;
-    color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 25px;
+    color: #5A0033;
 }
 
-header .right-container {
+.search-login {
     display: flex;
     align-items: center;
 }
 
-header .search-bar {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-}
-
-header .search-bar input {
+.search-login input {
     padding: 5px;
-    border: 1px solid #a98582;
-    border-radius: 4px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
 }
 
-header .search-bar button {
-    background-color: #a98582;
-    border: none;
-    cursor: pointer;
+.search-login a {
+    margin: 0 5px;
     padding: 5px 10px;
-    border-radius: 4px;
-    color: #fff;
-    margin-left: 10px;
-}
-
-header .auth-links {
-    display: flex;
-    align-items: center;
-}
-
-header .auth-links a {
-    color: #fff;
+    background-color: #5A0033;
+    color: white;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 20px;
-    padding: 8px 16px;
-    border: 2px solid #513A45;
-    border-radius: 4px;
-    background-color: #513A45;
-    transition: background-color 0.3s, color 0.3s;
-    margin-left: 10px;
-    bottom: 10px;
+    border-radius: 5px;
 }
 
-header .auth-links a:hover {
-    background-color: #513A45;
-    color: #fff;
-}
-
-.logo-container {
+.hero {
+    background-image: url('path/to/your/image.jpg'); /* Cambia esta ruta por la de tu imagen */
+    background-size: cover;
+    background-position: center;
+    height: 300px;
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Ajusta la posición del logo a la izquierda */
-    padding: 30px 20px 20px 0; /* Añade espacio a la derecha del logo */
+    justify-content: center;
 }
 
-.logo-container img {
-    height: 200px;
-}
-.container {
-    text-align: center;
-    padding: 50px 20px;
-    flex: 1;
-    margin-top: 80px;
-}
-
-.container h1 {
-    font-size: 66px;
-    color: #7e5a58;
-    font-family: 'Brush Script MT', cursive;
-    font-weight: 600;
-    margin-top: -270px;
-}
-
-.container p {
-    font-size: 22px;
-    color: #5a4d4b;
-    font-style: italic;
-    font-weight: lighter;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 20px;
-    color: #5a4d4b;
-}
-
-footer {
-    background-color: #a98582;
-    padding: 2px;
-    text-align: center;
-    color: #fff;
+.hero img {
     width: 100%;
-    font-weight: 600;
-    font-size: 15px;
-    position: relative;
-    bottom: 0;
-    left: 0;
-
+    height: auto;
 }
 
-.facebook{/* Vector */
+.content {
+    flex: 1;
+    padding: 20px;
+    text-align: left;
+}
 
-    position: static;
-    left: 97.51%;
-    right: 0.71%;
-    top: 96.88%;
-    bottom: 1.17%;
-    background: #513A45;
-  }
+.content2 {
+    padding: 20px;
+    text-align: right;
+}
+
+.footer {
+    background-color: #D08590;
+    padding: 2px 20px;
+    text-align: left;
+    margin-top: auto;
+}
+
+
+
+
 
 
 
