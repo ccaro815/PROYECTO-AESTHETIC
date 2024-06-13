@@ -110,43 +110,45 @@ header nav a {
     display: block; /* Asegura que el margen auto funcione */
 }
 
-.content {
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .content, .content2 {
     flex: 1;
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    margin-top: 800px; /* Ajusta este valor según sea necesario para mover solo el .content hacia abajo */
-}
-
-.content2 {
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-li {
+    margin-right: 20px; /* Adjust spacing as needed */
+  }
+  
+  h2, h3 {
     margin-bottom: 10px;
-}
+  }
+  
+  p {
+    margin-bottom: 5px;
+  }
+  
 
 
 .footer {
     background-color: #D08590;
-    padding: 2px 20px;
+    padding: 5px 20px;
+    display: flex;
+}
+  
+.footer-content {
+    flex: 1;
     text-align: left;
-    margin-top: auto;
+}
+  
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
 }
 
-
-
-
-
-
-
+.social-icons a {
+    margin-left: 10px;
+}
 
