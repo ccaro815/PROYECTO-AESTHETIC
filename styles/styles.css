@@ -1,4 +1,4 @@
-html, body {
+html{
     height: 100%;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -97,7 +97,7 @@ header nav a {
 .hero {
     background-size: cover;
     background-position: center;
-    height: 300px;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,6 +108,33 @@ header nav a {
     max-height: 80%; /* Reduz la altura de la imagen al 80% del contenedor */
     margin: 0 auto; /* Centra la imagen horizontalmente */
     display: block; /* Asegura que el margen auto funcione */
+}
+
+
+.swiper {
+    width: 1000px;
+    height: 400px;
+    padding: 25px 0;
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, rgba(0,0,0,0.145));
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width:991px) {
+    body {
+        padding: 0 100px;
+    }
 }
 
 .container {
