@@ -103,11 +103,11 @@ header nav a {
     justify-content: center;
 }
 .hero img {
-    width: 100%; /* Estira la imagen al 100% del contenedor */
-    max-width: 4000px; /* Establece un máximo para el ancho de la imagen */
-    max-height: 80%; /* Reduz la altura de la imagen al 80% del contenedor */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    display: block; /* Asegura que el margen auto funcione */
+    width: 100%; 
+    max-width: 4000px; 
+    max-height: 80%; 
+    margin: 0 auto; 
+    display: block; 
 }
 
 
