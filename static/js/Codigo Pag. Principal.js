@@ -3,6 +3,10 @@ let swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,  // Espacio entre las imágenes
   grabCursor: true,
   loop: true,
+  autoplay: {
+    delay: 2500,  // Tiempo entre slides (en milisegundos)
+    disableOnInteraction: false,  // No detener el autoplay al interactuar con el carrusel
+  },
   breakpoints: {
     991: {
       slidesPerView: 3,  // Mostrar 3 imágenes a la vez en pantallas grandes
@@ -15,5 +19,6 @@ let swiper = new Swiper(".mySwiper", {
     },
   },
 });
+
 
 
