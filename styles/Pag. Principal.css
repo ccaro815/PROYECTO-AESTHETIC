@@ -130,8 +130,8 @@ header nav a {
 
 .swiper-slide img {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 @media (max-width: 991px) {
