@@ -38,13 +38,13 @@ def register():
         password = request.form['password']
         confirm_password = request.form['confirm-password']
         if password != confirm_password:
-            return "Las contraseñas no coinciden"
+            return render_template('Pag_Registro.html', mensaje="Las contraseñas no coinciden")
         if Usuario.query.filter_by(email=email).first():
-            return "El usuario ya existe"
+            return render_template('Pag_Registro.html', mensaje="El usuario ya existe")
         nuevo_usuario = Usuario(nombre=nombre, dni=dni, email=email, password=password)
         db.session.add(nuevo_usuario)
         db.session.commit()
-        return redirect(url_for('login'))
+        return render_template('Pag_Registro.html', mensaje="Registro exitoso. Ahora puedes iniciar sesión.")
     return render_template('Pag_Registro.html')
 
 @app.route('/dashboard')
