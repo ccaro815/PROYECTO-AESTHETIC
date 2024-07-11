@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio de Sesión</title>
-    <link rel="stylesheet" href="../styles/Pag. Login.css"/>
+    <link rel="stylesheet" href="../static/styles/Pag_Login.css"/>
 </head>
 <body>
     <div class="login-container">
         <div class="login-left">
             <h1>Inicia Sesión con tu usuario y contraseña</h1>
-            <a href="../Pag. Principal AESTETIC.html">
-            <img src="../media/Imagenes Pag. Login/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
+            <a href="../Pag_Principal_AESTETIC.html">
+            <img src="../static/media/Imagenes_Pag_Login/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
             </a>
         </div>
         <div class="login-right">
             <h2>Iniciar sesión</h2>
             <p>Bienvenida/o a nuestro centro de estética</p>
-            <form action="#" method="post">
+            <form action="{{ url_for('login') }}" method="post">
                 <label for="usuario">Usuario</label>
                 <input type="email" id="usuario" name="usuario" placeholder="persona@encodelabs.com" required>
                 <label for="contrasena">Contraseña</label>
@@ -27,7 +27,7 @@
                     <input type="checkbox" name="remember"> Recordar mi Usuario
                 </label>
                 <button type="submit">Iniciar Sesión</button>
-                <button type="button" onclick="location.href='Pag. Registro.html'">Crear cuenta</button>
+                <button type="button" onclick="location.href='Pag_Registro.html'">Crear cuenta</button>
             </form>
         </div>
     </div>
