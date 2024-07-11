@@ -3,9 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="../styles/Pag. Servicios.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+        <div class="left-panel">
+            <h1>Servicios</h1>
+            <a href="../Pag. Principal AESTETIC.html">
+                <img src="../media/Imagenes Pag. Principal/logo_encabezado.png" alt="Aesthetic Estética Integral">
+            </a>
+        </div>
+        <div class="right-panel">
+            <form action="{{ url_for('register') }}" method="post">
+                <button type="button" onclick="location.href='../service/Pag. Tratamiento.html'">Tratamientos Corporales</button>
+                <button type="button" onclick="location.href='../service/Pag. TratamientoFacial.html'">Tratamiento Facial</button>
+                <button type="button" onclick="location.href='../service/Pag. Depilacion.html'">Depilación</button>
+                <button type="button" onclick="location.href='../service/Pag. SpaDeManos.html'">Spa de Manos</button>
+                <button type="button" onclick="location.href='../service/Pag. Masajes.html'">Masajes</button>
+                <button type="button" onclick="location.href='../service/Pag. GifCard.html'">Gif Card</button>
+            </form>      
+        </div>
+    </div>
 
 </body>
 </html>
