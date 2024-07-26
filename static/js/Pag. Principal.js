@@ -4,7 +4,7 @@ let swiper = new Swiper(".mySwiper", {
   grabCursor: true,
   loop: true,
   autoplay: {
-    delay: 2500,  // Tiempo entre slides (en milisegundos)
+    delay: 1800,  // Tiempo entre slides (en milisegundos)
     disableOnInteraction: false,  // No detener el autoplay al interactuar con el carrusel
   },
   breakpoints: {
