@@ -47,8 +47,6 @@ def register():
     
     return render_template('Registro.html')
 
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
@@ -68,7 +66,12 @@ def login():
 def dashboard():
     return "Bienvenido al Dashboard"
 
+@app.route('/servicios')
+def servicios():
+    return render_template('Servicios.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 

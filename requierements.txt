@@ -1,0 +1,24 @@
+Instalar el entorno virtual de python 3.12.4
+
+flask
+flask_sqlalchemy
+werkzeug.security
+
+En el caso que no ande la BBDD y no este la carpeta instance ejecutamos el comando flask shell y a continuacion escribimos lo siguiente:
+
+from app import db
+>> db.create_all()
+>> exit()
+
+A la cual creara la carpeta instance donde estara la base de datos.
+
+Una vez hecho todos los pasos procedemos a apretar click derecho sobre app.py y abrimos terminal integrado, y
+ejecutamos el siguente comando "flask run" a la cual se iniciara el programa Running on http://127.0.0.1:5000 y listo
+
+Si ejecutas el flask run y no queres dejar de ejecutarlo para implementar nuevos camnbios es nesesario ejecutar el siquiente comando
+
+set FLASK_ENV=development
+set FLASK_DEBUG=1
+flask run --reload
+
+CON ESTO YA CADA CAMBIO DE CODIGO QUE HAGAS AUTOMATICAMENTE SE ACTULIZARA
