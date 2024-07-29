@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -55,16 +55,29 @@ def login():
         user = User.query.filter_by(email=email).first()
 
         if user and check_password_hash(user.password, password):
+            session['user_id'] = user.id
+            session['user_name'] = user.nombre
             flash('Inicio de sesión exitoso', 'success')
-            return redirect(url_for('home'))
+            return redirect(url_for('dashboard'))
         else:
             flash('Correo o contraseña incorrectos', 'danger')
     
     return render_template('Login.html')
 
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    session.pop('user_name', None)
+    flash('Has cerrado sesión', 'success')
+    return redirect(url_for('home'))
+
 @app.route('/dashboard')
 def dashboard():
-    return "Bienvenido al Dashboard"
+    if 'user_id' not in session:
+        flash('Por favor inicia sesión primero', 'danger')
+        return redirect(url_for('login'))
+    
+    return render_template('Dashboard.html', user_name=session.get('user_name'))
 
 @app.route('/servicios')
 def servicios():
