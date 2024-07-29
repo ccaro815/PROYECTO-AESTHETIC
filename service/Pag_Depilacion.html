@@ -3,18 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Depilación</title>
+    <link rel="stylesheet" href="../static/styles/Pag_Depilacion.css">
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
             <h1></h1>
             <a href="{{ url_for('home') }}">
-                <img src="../static/media/Imagenes Pag. Principal/logo_encabezado.png" alt="Aesthetic Estética Integral">
+                <img src="../static/media/Imagenes Pag_Depilacion/logo_encabezado.png" alt="Aesthetic Estética Integral">
             </a>
         </div>
         <div class="right-panel">
-            </form>
+            <h1></h1>
+            <div class="image-block">
+                <div class="grid-container">
+                    <div class="grid-item"><img src="../media/Imagenes Pag. Servivcios/Servicio 1.jpg"></div>
+                    <div class="grid-item"><img src="../media/Imagenes Pag. Principal/Carrusel/imagen1.png"></div>
+                    <div class="grid-item"><img src="../media/Imagenes Pag. Principal/Carrusel/imagen2.png"></div>
+                    <div class="grid-item"><img src="../media/Imagenes Pag. Principal/Carrusel/imagen3.png"></div>
+                </div>
+            </div>
+            <div class="ver-mas">
+                <a href="#">Ver Más</a>
+            </div>
+            <form action="{{ url_for('register') }}" method="post">
+                <div class="container">
+                    <div class="content">
+                      <h2>Radiofrecuencia:</h2>
+                      <p>Aumenta colageno y elastina</p>
+                      
+                    </div>
+                    <div class="content">
+                      <h3>Microcorrientes:</h3>
+                      <p>Tonica musculos con electricidad.</p>
+                      
+                    </div>
+                  </div>
+            </form>      
+        
+           
         </div>
     </div>
 
