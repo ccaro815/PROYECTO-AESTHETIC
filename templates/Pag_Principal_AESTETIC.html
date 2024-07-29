@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estética Aesthetic</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../static/styles/Pag. Principal.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/Pag. Principal.css') }}" />
 </head>
 
 <body>
   <div class="top-header">
     <div class="logo">
       <a href="{{ url_for('home') }}">
-        <img src="../static/media/Imagenes Pag. Principal/logo_encabezado.png" alt="logo_encabezado" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/logo_encabezado.png') }}" alt="logo_encabezado" />
       </a>
     </div>
 
     <div class="title">
-      <img src="../static/media/Imagenes Pag. Principal/titulo_logo.png" alt="titulo_logo" />
+      <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/titulo_logo.png') }}" alt="titulo_logo" />
     </div>
     <div class="contact-info">
       <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/contactos.png') }}" alt="contact-info" />
@@ -35,8 +35,16 @@
     <div class="search-login">
       <input type="text" placeholder="Buscar" />
       <button class="cart-button">🛒</button>
-      <a href="{{ url_for('login') }}">Iniciar Sesión</a>
-      <a href="{{ url_for('register') }}">Crear Cuenta</a>
+      {% if user_name %}
+        <div class="user-info">
+          <div class="avatar">{{ user_name[0] }}</div>
+          <p>{{ user_name }}</p>
+          <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        </div>
+      {% else %}
+        <a href="{{ url_for('login') }}">Iniciar Sesión</a>
+        <a href="{{ url_for('register') }}">Crear Cuenta</a>
+      {% endif %}
     </div>
   </header>
 
@@ -128,3 +136,4 @@
 </body>
 
 </html>
+

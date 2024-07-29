@@ -17,7 +17,8 @@ class User(db.Model):
 
 @app.route('/')
 def home():
-    return render_template('Pag_Principal_AESTETIC.html')
+    user_name = session.get('user_name', None)
+    return render_template('Pag_Principal_AESTETIC.html', user_name=user_name)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -58,7 +59,7 @@ def login():
             session['user_id'] = user.id
             session['user_name'] = user.nombre
             flash('Inicio de sesión exitoso', 'success')
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('home'))
         else:
             flash('Correo o contraseña incorrectos', 'danger')
     
@@ -71,20 +72,13 @@ def logout():
     flash('Has cerrado sesión', 'success')
     return redirect(url_for('home'))
 
-@app.route('/dashboard')
-def dashboard():
-    if 'user_id' not in session:
-        flash('Por favor inicia sesión primero', 'danger')
-        return redirect(url_for('login'))
-    
-    return render_template('Dashboard.html', user_name=session.get('user_name'))
-
 @app.route('/servicios')
 def servicios():
     return render_template('Servicios.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
