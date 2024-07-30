@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
@@ -15,10 +16,15 @@ class User(db.Model):
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(256), nullable=False)
 
+def generate_random_color():
+    return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+
 @app.route('/')
 def home():
     user_name = session.get('user_name', None)
-    return render_template('Pag_Principal_AESTETIC.html', user_name=user_name)
+    user_apellido = session.get('user_apellido', None)
+    avatar_color = session.get('avatar_color', None)
+    return render_template('Pag_Principal_AESTETIC.html', user_name=user_name, user_apellido=user_apellido, avatar_color=avatar_color)
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -58,17 +64,21 @@ def login():
         if user and check_password_hash(user.password, password):
             session['user_id'] = user.id
             session['user_name'] = user.nombre
+            session['user_apellido'] = user.apellido
+            session['avatar_color'] = generate_random_color()
             flash('Inicio de sesión exitoso', 'success')
             return redirect(url_for('home'))
         else:
             flash('Correo o contraseña incorrectos', 'danger')
-    
+
     return render_template('Login.html')
 
 @app.route('/logout')
 def logout():
     session.pop('user_id', None)
     session.pop('user_name', None)
+    session.pop('user_apellido', None)
+    session.pop('avatar_color', None)
     flash('Has cerrado sesión', 'success')
     return redirect(url_for('home'))
 
@@ -78,6 +88,8 @@ def servicios():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
 
 
 

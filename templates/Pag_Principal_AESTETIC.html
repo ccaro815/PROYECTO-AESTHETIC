@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Estética Aesthetic</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles/Pag. Principal.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/Pag_Principal.css') }}" />
 </head>
 
 <body>
   <div class="top-header">
     <div class="logo">
       <a href="{{ url_for('home') }}">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/logo_encabezado.png') }}" alt="logo_encabezado" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/logo_encabezado.png') }}" alt="logo_encabezado" />
       </a>
     </div>
 
     <div class="title">
-      <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/titulo_logo.png') }}" alt="titulo_logo" />
+      <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/titulo_logo.png') }}" alt="titulo_logo" />
     </div>
     <div class="contact-info">
-      <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/contactos.png') }}" alt="contact-info" />
+      <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/contactos.png') }}" alt="contact-info" />
     </div>
   </div>
   <header>
@@ -36,10 +36,10 @@
       <input type="text" placeholder="Buscar" />
       <button class="cart-button">🛒</button>
       {% if user_name %}
-        <div class="user-info">
-          <div class="avatar">{{ user_name[0] }}</div>
-          <p>{{ user_name }}</p>
-          <a href="{{ url_for('logout') }}">Cerrar sesión</a>
+        <div class="user-avatar">
+          <div class="avatar" style="background-color: {{ avatar_color }};">{{ user_name[0] }}{{ user_apellido[0] }}</div>
+          <span class="user-name">{{ user_name }}</span>
+          <a href="{{ url_for('logout') }}" class="logout-link">Cerrar Sesión</a>
         </div>
       {% else %}
         <a href="{{ url_for('login') }}">Iniciar Sesión</a>
@@ -53,46 +53,46 @@
   </div>
 
   <div class="hero">
-    <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/ImagenPrincipal.png') }}" alt="Hero Image" />
+    <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/ImagenPrincipal.png') }}" alt="Hero Image" />
   </div>
 
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen1.png') }}" alt="imagen 1" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen1.png') }}" alt="imagen 1" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen2.png') }}" alt="imagen 2" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen2.png') }}" alt="imagen 2" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen3.png') }}" alt="imagen 3" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen3.png') }}" alt="imagen 3" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen4.png') }}" alt="imagen 4" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen4.png') }}" alt="imagen 4" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen5.png') }}" alt="imagen 5" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen5.png') }}" alt="imagen 5" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen6.png') }}" alt="imagen6" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen6.png') }}" alt="imagen6" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen7.png') }}" alt="imagen7" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen7.png') }}" alt="imagen7" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen8.png') }}" alt="imagen8" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen8.png') }}" alt="imagen8" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen9.png') }}" alt="imagen9" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen9.png') }}" alt="imagen9" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen10.png') }}" alt="imagen10" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen10.png') }}" alt="imagen10" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen11.png') }}" alt="imagen11" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen11.png') }}" alt="imagen11" />
       </div>
       <div class="swiper-slide">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/Carrusel/imagen12.png') }}" alt="imagen12" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/Carrusel/imagen12.png') }}" alt="imagen12" />
       </div>
     </div>
   </div>
@@ -120,20 +120,23 @@
     </div>
     <div class="social-icons">
       <a href="#" class="iconofacebook">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/facebook.png') }}" alt="logofacebook" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/facebook.png') }}" alt="logofacebook" />
       </a>
       <a href="#" class="iconoinstagram">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/instagram.png') }}" alt="logoinstagram" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/instagram.png') }}" alt="logoinstagram" />
       </a>
       <a href="#" class="iconolinkedin">
-        <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/linkedin.png') }}" alt="logolinkedin" />
+        <img src="{{ url_for('static', filename='media/Imagenes Pag_Principal/linkedin.png') }}" alt="logolinkedin" />
       </a>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="{{ url_for('static', filename='js/Pag. Principal.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/Pag_Principal.js') }}"></script>
 </body>
 
 </html>
+
+
+
 
