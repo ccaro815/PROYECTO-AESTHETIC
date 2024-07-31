@@ -50,6 +50,12 @@ def register():
             flash('Las contraseñas no coinciden', 'danger')
             return redirect(url_for('register'))
         
+        # Verificar si el correo electrónico ya está registrado
+        existing_user = User.query.filter_by(email=email).first()
+        if existing_user:
+            flash('Este correo electrónico ya está registrado. Por favor, utiliza otro correo o inicia sesión.', 'danger')
+            return redirect(url_for('register'))
+
         hashed_password = generate_password_hash(contrasena, method='pbkdf2:sha256')
         new_user = User(nombre=nombre, apellido=apellido, email=email, password=hashed_password)
         
@@ -70,6 +76,7 @@ def register():
             return redirect(url_for('register'))
     
     return render_template('Registro.html')
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
