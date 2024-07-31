@@ -3,6 +3,7 @@ Instalar el entorno virtual de python 3.12.4
 flask
 flask_sqlalchemy
 werkzeug.security
+Flask-Mail
 
 En el caso que no ande la BBDD y no este la carpeta instance ejecutamos el comando flask shell y a continuacion escribimos lo siguiente:
 
