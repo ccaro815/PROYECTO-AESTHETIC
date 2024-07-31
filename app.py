@@ -1,13 +1,24 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_mail import Mail, Message
 import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+# Configuración de Flask-Mail
+app.config['MAIL_SERVER'] = 'smtp.your-email-provider.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = 'your-email@example.com'
+app.config['MAIL_PASSWORD'] = 'your-email-password'
+app.config['MAIL_DEFAULT_SENDER'] = 'your-email@example.com'
+
 db = SQLAlchemy(app)
+mail = Mail(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -45,8 +56,14 @@ def register():
         try:
             db.session.add(new_user)
             db.session.commit()
-            flash('Cuenta creada con éxito', 'success')
-            return redirect(url_for('login'))
+
+            # Enviar correo de confirmación
+            msg = Message('Confirmación de Registro', recipients=[email])
+            msg.body = f"Hola {nombre} {apellido},\n\nGracias por registrarte en nuestra plataforma. Por favor, confirma tu correo electrónico. Puedes iniciar sesión usando el siguiente enlace: {url_for('login', _external=True)}\n\nTu correo registrado es: {email}\n\nSaludos,\nEquipo de Soporte"
+            mail.send(msg)
+
+            flash('Cuenta creada con éxito. Verifica tu correo para continuar.', 'success')
+            return redirect(url_for('registro_exitoso'))
         except Exception as e:
             db.session.rollback()
             flash(f'Error al crear la cuenta: {str(e)}', 'danger')
@@ -80,6 +97,28 @@ def logout():
     session.pop('user_apellido', None)
     session.pop('avatar_color', None)
     flash('Has cerrado sesión', 'success')
+    return redirect(url_for('home'))
+
+@app.route('/registro_exitoso')
+def registro_exitoso():
+    return render_template('registro_exitoso.html')
+
+@app.route('/resend_confirmation')
+def resend_confirmation():
+    user_id = session.get('user_id')
+    if not user_id:
+        flash('Debes iniciar sesión para reenviar el correo de confirmación', 'warning')
+        return redirect(url_for('login'))
+    
+    user = User.query.get(user_id)
+    if user:
+        msg = Message('Reenvío de Confirmación de Registro', recipients=[user.email])
+        msg.body = f"Hola {user.nombre} {user.apellido},\n\nEste es un reenvío de la confirmación de tu registro. Puedes iniciar sesión usando el siguiente enlace: {url_for('login', _external=True)}\n\nTu correo registrado es: {user.email}\n\nSaludos,\nEquipo de Soporte"
+        mail.send(msg)
+        flash('Correo de confirmación reenviado.', 'success')
+    else:
+        flash('Usuario no encontrado.', 'danger')
+    
     return redirect(url_for('home'))
 
 @app.route('/servicios')
