@@ -107,3 +107,28 @@ a:hover {
     text-decoration: underline;
 }
 
+.success-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.success-container h2 {
+    color: #6a2e39;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.success-container p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.success-container a {
+    color: #d49cae;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.success-container a:hover {
+    text-decoration: underline;
+}

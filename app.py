@@ -1,24 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_mail import Mail, Message
 import random
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
+
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Configuración de Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.your-email-provider.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'your-email@example.com'
-app.config['MAIL_PASSWORD'] = 'your-email-password'
-app.config['MAIL_DEFAULT_SENDER'] = 'your-email@example.com'
+app.config['SQLALCHEMY_BINDS'] = {
+    'tokens': 'sqlite:///tokens.db'
+}
 
 db = SQLAlchemy(app)
-mail = Mail(app)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -26,6 +21,14 @@ class User(db.Model):
     apellido = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(150), nullable=False, unique=True)
     password = db.Column(db.String(256), nullable=False)
+
+class Token(db.Model):
+    __bind_key__ = 'tokens'
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, nullable=False)
+    token = db.Column(db.String(256), nullable=False)
+    expiration = db.Column(db.DateTime, nullable=False)
+
 
 def generate_random_color():
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
@@ -49,91 +52,55 @@ def register():
         if contrasena != confirmar_contrasena:
             flash('Las contraseñas no coinciden', 'danger')
             return redirect(url_for('register'))
-        
-        # Verificar si el correo electrónico ya está registrado
-        existing_user = User.query.filter_by(email=email).first()
-        if existing_user:
-            flash('Este correo electrónico ya está registrado. Por favor, utiliza otro correo o inicia sesión.', 'danger')
-            return redirect(url_for('register'))
 
         hashed_password = generate_password_hash(contrasena, method='pbkdf2:sha256')
         new_user = User(nombre=nombre, apellido=apellido, email=email, password=hashed_password)
-        
+
         try:
             db.session.add(new_user)
             db.session.commit()
+            
+            token = s.dumps(email, salt='email-confirm')
+            validation_token = Token(user_id=new_user.id, token=token)
+            db.session.add(validation_token)
+            db.session.commit()
 
-            # Enviar correo de confirmación
-            msg = Message('Confirmación de Registro', recipients=[email])
-            msg.body = f"Hola {nombre} {apellido},\n\nGracias por registrarte en nuestra plataforma. Por favor, confirma tu correo electrónico. Puedes iniciar sesión usando el siguiente enlace: {url_for('login', _external=True)}\n\nTu correo registrado es: {email}\n\nSaludos,\nEquipo de Soporte"
+            msg = Message('Confirma tu correo electrónico', sender='tu_email@example.com', recipients=[email])
+            link = url_for('confirm_email', token=token, _external=True)
+            msg.body = f'Haz clic en el siguiente enlace para confirmar tu cuenta: {link}'
             mail.send(msg)
 
-            flash('Cuenta creada con éxito. Verifica tu correo para continuar.', 'success')
-            return redirect(url_for('registro_exitoso'))
+            # Mostrar mensaje de éxito
+            return render_template('Registro.html', success=True)
         except Exception as e:
             db.session.rollback()
             flash(f'Error al crear la cuenta: {str(e)}', 'danger')
             return redirect(url_for('register'))
-    
+
     return render_template('Registro.html')
 
+@app.route('/confirm_email/<token>')
+def confirm_email(token):
+    try:
+        email = s.loads(token, salt='email-confirm', max_age=172800)  # 48 horas de validez
+    except SignatureExpired:
+        flash('El enlace de confirmación ha expirado. Por favor, regístrate de nuevo.', 'danger')
+        return redirect(url_for('register'))
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form['usuario']
-        password = request.form['contrasena']
-        user = User.query.filter_by(email=email).first()
+    user = User.query.filter_by(email=email).first_or_404()
 
-        if user and check_password_hash(user.password, password):
-            session['user_id'] = user.id
-            session['user_name'] = user.nombre
-            session['user_apellido'] = user.apellido
-            session['avatar_color'] = generate_random_color()
-            flash('Inicio de sesión exitoso', 'success')
-            return redirect(url_for('home'))
-        else:
-            flash('Correo o contraseña incorrectos', 'danger')
-
-    return render_template('Login.html')
-
-@app.route('/logout')
-def logout():
-    session.pop('user_id', None)
-    session.pop('user_name', None)
-    session.pop('user_apellido', None)
-    session.pop('avatar_color', None)
-    flash('Has cerrado sesión', 'success')
-    return redirect(url_for('home'))
-
-@app.route('/registro_exitoso')
-def registro_exitoso():
-    return render_template('registro_exitoso.html')
-
-@app.route('/resend_confirmation')
-def resend_confirmation():
-    user_id = session.get('user_id')
-    if not user_id:
-        flash('Debes iniciar sesión para reenviar el correo de confirmación', 'warning')
-        return redirect(url_for('login'))
-    
-    user = User.query.get(user_id)
-    if user:
-        msg = Message('Reenvío de Confirmación de Registro', recipients=[user.email])
-        msg.body = f"Hola {user.nombre} {user.apellido},\n\nEste es un reenvío de la confirmación de tu registro. Puedes iniciar sesión usando el siguiente enlace: {url_for('login', _external=True)}\n\nTu correo registrado es: {user.email}\n\nSaludos,\nEquipo de Soporte"
-        mail.send(msg)
-        flash('Correo de confirmación reenviado.', 'success')
+    if user.confirmed:
+        flash('Tu cuenta ya ha sido confirmada.', 'success')
     else:
-        flash('Usuario no encontrado.', 'danger')
-    
-    return redirect(url_for('home'))
+        user.confirmed = True
+        db.session.commit()
+        flash('Tu cuenta ha sido confirmada. Ya puedes iniciar sesión.', 'success')
 
-@app.route('/servicios')
-def servicios():
-    return render_template('Servicios.html')
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
