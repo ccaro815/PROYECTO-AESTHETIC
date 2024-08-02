@@ -20,11 +20,6 @@
         </select>
         <button type="submit">Asignar Rol</button>
     </form>
-    <ul>
-        {% for assignment in role_assignments %}
-        <li>{{ assignment.user_email }} - {{ assignment.role_name }}</li>
-        {% endfor %}
-    </ul>
 </body>
 </html>
 
