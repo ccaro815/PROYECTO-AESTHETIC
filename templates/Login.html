@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio de Sesión</title>
-    <link rel="stylesheet" href="../static/styles/Login.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/Login.css') }}"/>
 </head>
 <body>
     <div class="login-container">
         <div class="login-left">
             <a href="{{ url_for('home') }}">
-                <img src="../static/media/Imagenes Pag. Principal/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
+                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/logo_encabezado.png') }}" alt="Aesthetic Estética Integral" class="logo">
             </a>
             <h1>Disfruta Un Hermoso Masaje En Nuestra Estetica</h1>
         </div>

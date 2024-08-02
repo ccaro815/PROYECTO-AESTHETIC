@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Asignar Rol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/assign_role.css') }}">
+</head>
+<body>
+    <h1>Asignar Rol</h1>
+    <form method="POST">
+        <select name="user_email" required>
+            {% for user in users %}
+            <option value="{{ user.email }}">{{ user.email }}</option>
+            {% endfor %}
+        </select>
+        <select name="role_id" required>
+            {% for role in roles %}
+            <option value="{{ role.id }}">{{ role.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Asignar Rol</button>
+    </form>
+    <ul>
+        {% for assignment in role_assignments %}
+        <li>{{ assignment.user_email }} - {{ assignment.role_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+
