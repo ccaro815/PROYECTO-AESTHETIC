@@ -31,8 +31,8 @@
             <a href="{{ url_for('home') }}">Inicio</a>
             <a href="{{ url_for('servicios') }}">Servicios</a>
             <a href="#">Gift Card</a>
-            <a href="#">Novedades</a>
-            <a href="#">Contáctanos</a>
+            <a href="{{ url_for('novedades') }}">Novedades</a>
+            <a href="{{ url_for('contactos') }}">Contáctanos</a>
         </nav>
         <div class="search-login">
             {% if user_email == 'cristianezequiel915@gmail.com' %}
