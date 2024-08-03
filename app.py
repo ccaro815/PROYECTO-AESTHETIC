@@ -1,13 +1,29 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_mail import Mail, Message
 import random
+import os
+from itsdangerous import URLSafeTimedSerializer
+from datetime import datetime, timedelta
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
+app.config['MAIL_SERVER'] = 'smtp.example.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USERNAME'] = 'your-email@example.com'
+app.config['MAIL_PASSWORD'] = 'your-password'
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+mail = Mail(app)
+
+ts = URLSafeTimedSerializer(app.config["SECRET_KEY"])
 
 roles_users = db.Table('roles_users',
     db.Column('user_id', db.Integer, db.ForeignKey('user.id')),
@@ -27,8 +43,35 @@ class Role(db.Model):
     name = db.Column(db.String(100), nullable=False)
     permissions = db.Column(db.String(200), nullable=True)
 
+class VerificationToken(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    token = db.Column(db.String(256), nullable=False, unique=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
+    expires_at = db.Column(db.DateTime, nullable=False)
+    user = db.relationship('User', backref=db.backref('verification_tokens', lazy=True))
+
 def generate_random_color():
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
+
+def send_email(to, subject, template):
+    msg = Message(
+        subject,
+        recipients=[to],
+        html=template,
+        sender=app.config['MAIL_USERNAME']
+    )
+    mail.send(msg)
+
+def generate_confirmation_token(email):
+    return ts.dumps(email, salt='email-confirm-key')
+
+def confirm_token(token, expiration=3600):
+    try:
+        email = ts.loads(token, salt='email-confirm-key', max_age=expiration)
+    except:
+        return False
+    return email
 
 @app.route('/')
 def home():
@@ -81,9 +124,41 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-        flash('Registro exitoso. Ahora puedes iniciar sesión.', 'success')
-        return redirect(url_for('login'))
+        # Generar token y guardar en la base de datos
+        token = generate_confirmation_token(new_user.email)
+        expires_at = datetime.utcnow() + timedelta(hours=48)
+        verification_token = VerificationToken(token=token, user_id=new_user.id, expires_at=expires_at)
+        db.session.add(verification_token)
+        db.session.commit()
+
+        confirm_url = url_for('confirm_email', token=token, _external=True)
+        html = render_template('activate.html', confirm_url=confirm_url)
+        subject = "Por favor confirma tu correo"
+        send_email(new_user.email, subject, html)
+
+        flash('Registro exitoso. Por favor, revisa tu correo para confirmar tu cuenta.', 'success')
+        return redirect(url_for('register_success'))
     return render_template('Register.html')
+
+@app.route('/register_success')
+def register_success():
+    return render_template('register_success.html')
+
+@app.route('/confirm_email/<token>')
+def confirm_email(token):
+    verification_token = VerificationToken.query.filter_by(token=token).first_or_404()
+    
+    # Verificar si el token ha expirado
+    if verification_token.expires_at < datetime.utcnow():
+        flash('El enlace de confirmación ha expirado.', 'danger')
+        return redirect(url_for('home'))
+    
+    user = verification_token.user
+    db.session.delete(verification_token)  # Eliminar el token después de la verificación
+    db.session.commit()
+
+    flash('Has confirmado tu correo electrónico. Gracias!', 'success')
+    return redirect(url_for('home'))
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():
@@ -139,20 +214,15 @@ def restricted_page():
         return redirect(url_for('home'))
     return render_template('restricted_page.html')
 
-@app.route('/gift_card')
-def gift_card():
-    return render_template('GiftCard.html')
-
-@app.route('/novedades')
-def novedades():
-    return render_template('Novedades.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('Contactos.html')
+@app.route('/servicios')
+def servicios():
+    return render_template('servicios.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
 
 
 
