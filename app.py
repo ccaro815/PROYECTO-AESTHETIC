@@ -217,6 +217,18 @@ def restricted_page():
 def servicios():
     return render_template('Servicios.html')
 
+@app.route('/novedades')
+def novedades():
+    return render_template('Novedades.html')
+
+@app.route('/gif_card')
+def gif_card():
+    return render_template('Gif_Card.html')
+
+@app.route('/contactos')
+def contactos():
+    return render_template('Contactos.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 
