@@ -83,7 +83,7 @@ def register():
 
         flash('Registro exitoso. Ahora puedes iniciar sesión.', 'success')
         return redirect(url_for('login'))
-    return render_template('Register.html')
+    return render_template('Registro.html')
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():
