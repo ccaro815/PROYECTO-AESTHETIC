@@ -138,7 +138,7 @@ def register():
 
         flash('Registro exitoso. Por favor, revisa tu correo para confirmar tu cuenta.', 'success')
         return redirect(url_for('register_success'))
-    return render_template('Register.html')
+    return render_template('Registro.html')
 
 @app.route('/register_success')
 def register_success():
@@ -147,14 +147,13 @@ def register_success():
 @app.route('/confirm_email/<token>')
 def confirm_email(token):
     verification_token = VerificationToken.query.filter_by(token=token).first_or_404()
-    
-    # Verificar si el token ha expirado
+
     if verification_token.expires_at < datetime.utcnow():
         flash('El enlace de confirmación ha expirado.', 'danger')
         return redirect(url_for('home'))
-    
+
     user = verification_token.user
-    db.session.delete(verification_token)  # Eliminar el token después de la verificación
+    db.session.delete(verification_token)
     db.session.commit()
 
     flash('Has confirmado tu correo electrónico. Gracias!', 'success')
@@ -216,7 +215,7 @@ def restricted_page():
 
 @app.route('/servicios')
 def servicios():
-    return render_template('servicios.html')
+    return render_template('Servicios.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
