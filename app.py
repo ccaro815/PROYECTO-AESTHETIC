@@ -139,6 +139,10 @@ def restricted_page():
         return redirect(url_for('home'))
     return render_template('restricted_page.html')
 
+@app.route('/servicios')
+def servicios():
+    return render_template('Servicios.html')
+
 @app.route('/gift_card')
 def gift_card():
     return render_template('GiftCard.html')
