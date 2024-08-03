@@ -118,13 +118,13 @@ def register():
         apellido = request.form['apellido']
         email = request.form['email']
         password = request.form['contrasena']
-        hashed_password = generate_password_hash(password, method='sha256')
+
+        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
 
         new_user = User(nombre=nombre, apellido=apellido, email=email, password=hashed_password)
         db.session.add(new_user)
         db.session.commit()
 
-        # Generar token y guardar en la base de datos
         token = generate_confirmation_token(new_user.email)
         expires_at = datetime.utcnow() + timedelta(hours=48)
         verification_token = VerificationToken(token=token, user_id=new_user.id, expires_at=expires_at)
@@ -231,6 +231,7 @@ def contactos():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
