@@ -11,37 +11,51 @@
         <div class="left-panel">
             <h1>Tratamiento Faciales</h1>
             <a href="../templates/Servicios.html">
-                <img src="../static/media/Imagenes Pag. Principal/logo_encabezado.png" alt="Aesthetic Estética Integral">
+                <img src="../static/media/Imagenes Pag. Servicios Tratamientos/facialPrincipal.png" alt="Aesthetic Estética Integral">
             </a>
+            <div class="info">
+              <p>Un tratamiento facial es un tratamiento que ayuda a limpiar los poros de la piel, exfoliar las células muertas, hidratar y humectar la piel y tratar los problemas cutáneos más comunes con un régimen personalizado..</p>          </div>
         </div>
         <div class="right-panel">
             <h1>Limpieza facial profunda</h1>
-            
-            <form action="{{ url_for('register') }}" method="post">
-                <div class="container">
-                    <div class="content">
-                      <h2>Objetivo:</h2>
-                      <p>Eliminar impurezas, sebo y celulas muertas</p>
-                      
-                    </div>
-                    <div class="content">
-                      <h2>Pasos:</h2>
-                      <p>Desmaquillado, exfoliacion, vaporizacion.</p>
-                    </div>
-                  </div>
-            </form>
-            <h1>Peeling quimic</h1>
-            <div class="content2">
+            <div class="image-block">
+              <div class="grid-container">
+                  <div class="grid-item"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/facial1.jfif"></div>
+                  <div class="grid-item"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/facial2.jfif"></div>
+                  <div class="grid-item"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/facial3.jpg"></div>
+                  <div class="grid-item"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/facial4.jfif"></div>
+
+                  <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal1.jpg"></div>
+                  <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal2.jpg"></div>
+                  <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal3.jpg"></div>
+                  <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal4.jpg"></div>
+
+                  <button class="ver_mas" id="hideText_btn">Ver Mas</button>
+              </div>
+          </div>  
+          <form action="{{ url_for('register') }}" method="post">
+            <div class="container">
+              <div class="content">
                 <h2>Objetivo:</h2>
-                <p>Exofoliar, reducir manchas y aarugas</p>
-                
+                <p>Eliminar impurezas, sebo y celulas muertas</p>
               </div>
-              <div class="content2">
-                <h2>Superficial:</h2>
-                <p>Acidos suaves para exfoliacion ligera.</p>
+              <div class="content">
+                <h2>Pasos:</h2>
+                <p>Desmaquillado, exfoliacion, vaporizacion.</p>
               </div>
-            </div>      
+            </div>
+          </form>
+          <h1>Peeling quimic</h1>
+          <div class="content2">
+            <h2>Objetivo:</h2>
+            <p>Exofoliar, reducir manchas y aarugas</p>
+          </div>
+          <div class="content2">
+            <h2>Superficial:</h2>
+            <p>Acidos suaves para exfoliacion ligera.</p>
+          </div>     
         </div>
     </div>
+    <script src="../static/js/Pag, Tratamientos.js"></script>
 </body>
 </html>

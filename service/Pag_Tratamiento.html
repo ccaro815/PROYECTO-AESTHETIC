@@ -11,7 +11,7 @@
         <div class="left-panel">
             <h1>Tratamiento Corporales</h1>
             <a href="../templates/Servicios.html">
-                <img src="../static/media/Imagenes Pag. Servicios Corporal/Imagen principal de tratamiento corporal.jpg" alt="Aesthetic Estética Integral">
+                <img src="../static/media/Imagenes Pag. Servicios Tratamientos/Imagen principal de tratamiento corporal.jpg" alt="Aesthetic Estética Integral">
             </a>
             <div class="informacion">
                 <p>Un tratamiento corporal es un conjunto de técnicas específicas para mejorar y cuidar nuestro cuerpo con tratamientos médicos sin cirugía. Estos tratamientos proporcionan mejoría estética mediante técnicas eficaces y novedosas que mejoran la calidad de la piel, la celulitis, el edema, la flacidez, el cúmulo de grasa localizado o las estrías.</p>
@@ -26,11 +26,16 @@
                     <div class="grid-item"><img src="../static/media/Imagenes Pag. Principal/Carrusel/imagen2.png"></div>
                     <div class="grid-item"><img src="../static/media/Imagenes Pag. Principal/Carrusel/imagen3.png"></div>
                     <div class="grid-item"><img src="../static/media/Imagenes Pag. Principal/Carrusel/imagen4.png"></div>
+
+                    <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal1.jpg"></div>
+                    <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal2.jpg"></div>
+                    <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal3.jpg"></div>
+                    <div class="grid-item" style="display: none;"><img src="../static/media/Imagenes Pag. Servicios Tratamientos/Corporal4.jpg"></div>
+
+                    <button class="ver_mas" id="hideText_btn">Ver Mas</button>
                 </div>
             </div>
-            <div class="ver-mas">
-                <a href="#">Ver Más</a>
-            </div>
+            
             <form action="{{ url_for('register') }}" method="post">
                 <div class="container">
                     <div class="content">
@@ -40,12 +45,13 @@
                     </div>
                     <div class="content">
                       <h2>Microcorrientes:</h2>
-                      <p>Tonica musculos con electricidad.</p>
-                      
+                      <p>Tonica musculos con electricidad.</p>                  
                     </div>
                   </div>
             </form>      
         </div>
     </div>
+
+    <script src="../static/js/Pag, Tratamientos.js"></script>
 </body>
 </html>
