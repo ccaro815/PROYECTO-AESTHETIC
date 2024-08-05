@@ -125,11 +125,6 @@ def register():
         db.session.add(new_user)
         db.session.commit()
 
-<<<<<<< HEAD:app.py
-        flash('Registro exitoso. Ahora puedes iniciar sesión.', 'success')
-        return redirect(url_for('login'))
-    return render_template('Registro.html')
-=======
         token = generate_confirmation_token(new_user.email)
         expires_at = datetime.utcnow() + timedelta(hours=48)
         verification_token = VerificationToken(token=token, user_id=new_user.id, expires_at=expires_at)
@@ -163,7 +158,6 @@ def confirm_email(token):
 
     flash('Has confirmado tu correo electrónico. Gracias!', 'success')
     return redirect(url_for('home'))
->>>>>>> Validacion:aesthetic_app.py
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():
@@ -222,13 +216,6 @@ def restricted_page():
 @app.route('/servicios')
 def servicios():
     return render_template('Servicios.html')
-<<<<<<< HEAD:app.py
-
-@app.route('/gift_card')
-def gift_card():
-    return render_template('GiftCard.html')
-=======
->>>>>>> Validacion:aesthetic_app.py
 
 @app.route('/novedades')
 def novedades():

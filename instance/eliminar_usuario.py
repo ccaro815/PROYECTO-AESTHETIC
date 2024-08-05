@@ -1,3 +1,4 @@
+#Borrar registros
 import sqlite3
 
 db_path = 'C:\\Users\\Flia Caro Sosa Veron\\Desktop\\PROYECTO-AESTHETIC\\instance\\users.db'
@@ -15,6 +16,7 @@ eliminar_usuario(user_id)
 
 conn.close()
 
+#Mostrar tablas con los registros borrados o los que queres borrar
 import sqlite3
 
 db_path = 'C:\\Users\\Flia Caro Sosa Veron\\Desktop\\PROYECTO-AESTHETIC\\instance\\users.db'
