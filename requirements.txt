@@ -1,7 +1,0 @@
-flask
-flask_sqlalchemy
-werkzeug.security
-flask-Mail
-flask_migrate
-
-
