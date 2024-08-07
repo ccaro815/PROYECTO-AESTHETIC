@@ -11,7 +11,7 @@ body, html {
 .container {
     text-align: center;
     padding: 50px;
-    background-color: #fff;
+    background-color: #FFE8ED;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border-radius: 8px;
 }

@@ -65,7 +65,7 @@ label {
     color: #000000;
     margin-bottom: 5px;
     align-self: flex-start;
-    margin: 10px 240px;
+    margin: 10px 215px;
 }
 
 input[type="email"],
@@ -92,7 +92,7 @@ input[type="password"] {
     font-size: 0.9em;
     margin-bottom: 20px;
     align-self: flex-start;
-    margin: 10px 360px;
+    margin: 10px 320px;
 }
 
 button {
