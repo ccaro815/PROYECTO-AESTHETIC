@@ -14,39 +14,18 @@ body {
     height: 100%;
 }
 
-.left-panel{
-    flex: 1;
-    padding: 40px;
-
-}
-.right-panel{
-    flex: 1;
-    padding: 40px;
-
-}
-
 .left-panel {
+    flex: 1;
+    padding: 40px;
     background-color: #FFE8ED;
-    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 20px;
     text-align: center;
 }
 
-.left-panel h1 {
-    color: #6a2e39;
-    font-size: 7em;
-    margin: 0;
-}
-.left-panel h3{
-    color: #6a2e39;
-    font-size: 7em;
-    margin: 0;
-}
-.left-panel h4{
+.left-panel h1, .left-panel h3, .left-panel h4 {
     color: #6a2e39;
     font-size: 7em;
     margin: 0;
@@ -59,6 +38,8 @@ body {
 }
 
 .right-panel {
+    flex: 1;
+    padding: 40px;
     background-color: #fff;
     display: flex;
     flex-direction: column;
@@ -71,6 +52,7 @@ body {
     color: #D08590;
     margin-bottom: -50px;
 }
+
 .right-panel h5 {
     font-size: 34px;
     color: #525252;
@@ -87,11 +69,6 @@ form {
     flex-direction: column;
     width: 100%;
     max-width: 400px;
-}
-
-form label {
-    margin-bottom: 5px;
-    color: #666;
 }
 
 form input {
@@ -132,5 +109,6 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
 
 
