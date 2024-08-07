@@ -10,24 +10,26 @@ body {
 }
 
 .login-left {
-    background-color: #f5d9e0;
+    background-color: #FFE8ED;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px;
+    text-align: center;
 }
 
 .login-left h1 {
     color: #6a2e39;
-    font-size: 3em;
-    margin-bottom: 20px;
+    font-size: 7em;
+    margin: 0;
 }
 
 .logo {
-    max-width: 70%;
+    max-width: 100%;
     height: auto;
+    margin-top: 100px;
 }
 
 .login-right {
@@ -40,24 +42,30 @@ body {
 }
 
 .login-right h2 {
-    font-size: 24px;
-    color: #d49cae;
+    font-size: 30px;
+    color: #525252;
     margin-bottom: 10px;
+    margin: 10px 150px;
 }
 
-.login-right p {
-    color: #6a2e39;
-    margin-bottom: 30px;
+.login-right h3{
+    font-size: 38px;
+    color: #D08590;
+    margin-bottom: 10px;
+    margin: 10px 326px;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 label {
-    color: #6a2e39;
+    color: #000000;
     margin-bottom: 5px;
+    align-self: flex-start;
+    margin: 10px 240px;
 }
 
 input[type="email"],
@@ -67,28 +75,41 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
+    width: 45%;
 }
 
 .forgot-password {
-    color: red;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 0.9em;
     margin-bottom: 20px;
+    align-self: flex-start;
+    margin: 10px 360px;
 }
 
 .remember-me {
     color: #6a2e39;
     font-size: 0.9em;
     margin-bottom: 20px;
+    align-self: flex-start;
+    margin: 10px 360px;
 }
 
 button {
-    padding: 15px;
-    background-color: #d49cae;
-    color: white;
-    border: none;
-    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 10px 12px;
+    gap: 13px;
+    width: 420px;
+    height: 50px;
+    background-color: #D08590; /* Color de fondo rosado */
+    color: white; /* Texto en blanco */
+    border: none; /* Sin borde */
+    border-radius: 6px; /* Bordes redondeados */
     cursor: pointer;
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 10px 0; /* Margen vertical */
 }
 
 button:hover {
@@ -111,4 +132,5 @@ button:hover {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
 

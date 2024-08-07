@@ -9,12 +9,15 @@
 <body>
     <div class="login-container">
         <div class="login-left">
+            <h1>INICIAR</h1>
+            <h1>SESION</h1>
             <a href="{{ url_for('home') }}">
                 <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/logo_encabezado.png') }}" alt="Aesthetic Estética Integral" class="logo">
             </a>
-            <h1>Disfruta Un Hermoso Masaje En Nuestra Estetica</h1>
+            
         </div>
         <div class="login-right">
+            <h3>Iniciar Sesion</h3>
             <h2>Bienvenida/o a nuestro centro de estética</h2>
 
             {% with messages = get_flashed_messages(with_categories=true) %}
@@ -31,17 +34,19 @@
                 <label for="usuario">Usuario</label>
                 <input type="email" id="usuario" name="usuario" placeholder="persona@encodelabs.com" required>
                 <label for="contrasena">Contraseña</label>
-                <input type="password" id="contrasena" name="contrasena" required>
+                <input type="password" id="contrasena" name="contrasena" placeholder="************" required>
                 <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
                 <label class="remember-me">
                     <input type="checkbox" name="remember"> Recordar mi Usuario
                 </label>
                 <button type="submit">Iniciar Sesión</button>
+                <button type="button" onclick="location.href='{{ url_for('register') }}'">Crear cuenta</button>
             </form>
         </div>
     </div>
 </body>
 </html>
+
 
 
 
