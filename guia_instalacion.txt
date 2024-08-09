@@ -1,30 +1,13 @@
-
 Guía para la Instalación de Entorno Virtual y Dependencias de Flask
 
-1. Primero instala la versión de Python 3.12.4, luego clonamos el proyecto de git, luego de clonarlo borramos la carpeta .venv que este y cerramos el visual y entramos de nuevo 
+1. Primero instala la versión de Python la tultima version disponible, luego clonamos el proyecto de git, luego de clonarlo borramos la carpeta .venv que este y cerramos el visual y entramos de nuevo 
 
-2. Crear un entorno virtual vamos a hacerlo de esta forma entramos al proyecto en el visual, abajo a la derecha te dice la versión del Python 3.12.4, apretamos y arriba se abrirá un enlace que dice seleciona el interprete y eso, bueno seleccionamos créate virtual y luego selecionamos Venv y automáticamente se creara una carpeta .venv este es el entorno virtual
-   
+2. Crear un entorno virtual vamos a hacerlo de esta forma entramos al proyecto en el visual, abajo a la derecha te dice la versión del Python, apretamos y arriba se abrirá un enlace que dice seleciona el interprete y eso, bueno seleccionamos créate virtual y luego selecionamos Venv y automáticamente se creara una carpeta .venv este es el entorno virtual
 
 3. Activar el entorno virtual:
 
    .venv\Scripts\activate
-    
-4. Instalar las dependencias desde el archivo requirements.txt:
-   
-   pip install -r requirements.txt
-   
 
-5. Desactivar el entorno virtual:
+4. Instalar las dependencias una por una porque se van actualizando fijarse en el archivo .py
 
-   deactivate
-   
-Asegúrate de que el archivo requirements.txt contenga las siguientes líneas:
 
-   Flask==2.1.1
-   Flask-SQLAlchemy==2.5.1
-   Flask-Migrate==3.1.0
-   Werkzeug==2.1.1
-   Flask-Mail==0.9.1
-   itsdangerous==2.1.2
-   
