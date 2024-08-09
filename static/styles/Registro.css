@@ -25,7 +25,9 @@ body {
     text-align: center;
 }
 
-.left-panel h1, .left-panel h3, .left-panel h4 {
+.left-panel h1,
+.left-panel h3,
+.left-panel h4 {
     color: #6a2e39;
     font-size: 7em;
     margin: 0;
@@ -110,5 +112,22 @@ a:hover {
     text-decoration: underline;
 }
 
+.footer {
+    background-color: #d08590;
+    padding: 5px 20px;
+    display: flex;
+}
 
+.footer-content {
+    flex: 1;
+    text-align: left;
+}
 
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}

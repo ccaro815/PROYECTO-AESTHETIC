@@ -48,7 +48,7 @@ body {
     margin: 10px 150px;
 }
 
-.login-right h3{
+.login-right h3 {
     font-size: 38px;
     color: #D08590;
     margin-bottom: 10px;
@@ -103,13 +103,19 @@ button {
     gap: 13px;
     width: 420px;
     height: 50px;
-    background-color: #D08590; /* Color de fondo rosado */
-    color: white; /* Texto en blanco */
-    border: none; /* Sin borde */
-    border-radius: 6px; /* Bordes redondeados */
+    background-color: #D08590;
+    /* Color de fondo rosado */
+    color: white;
+    /* Texto en blanco */
+    border: none;
+    /* Sin borde */
+    border-radius: 6px;
+    /* Bordes redondeados */
     cursor: pointer;
-    font-size: 16px; /* Tamaño de fuente */
-    margin: 10px 0; /* Margen vertical */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    margin: 10px 0;
+    /* Margen vertical */
 }
 
 button:hover {
@@ -133,4 +139,22 @@ button:hover {
     border: 1px solid #f5c6cb;
 }
 
+.footer {
+    background-color: #d08590;
+    padding: 5px 20px;
+    display: flex;
+}
 
+.footer-content {
+    flex: 1;
+    text-align: left;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}

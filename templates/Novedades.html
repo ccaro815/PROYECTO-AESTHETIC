@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/styles/Novedades.css">
+    <title>Novedades</title>
+</head>
+<body>
+    <div class="contenedor">
+        <div class="panel-izquierdo">
+            <h1>Novedades</h1>
+            <img src="../static/media/Imagenes Pag. Novedades/logo_encabezado.png" alt="Logo Aesthetic" class="logo">
+        </div>
+
+        <!-- Panel Derecho -->
+        <div class="panel-derecho">
+            <h2>Nuestras novedades</h2>
+            <div class="novedades-links">
+                <a href="#">Menu / Novedades</a>
+                <h3>Blog de promociones</h3>
+            </div>
+
+            <div class="novedades-items">
+                <div class="novedad">
+                    <img src="promocion.jpg" alt="Promociones">
+                    <h3>Promociones</h3>
+                    <p>¡Celebra el mes con nosotros en nuestra estética! Disfruta de un 20% de descuento en todos nuestros tratamientos faciales y corporales...</p>
+                </div>
+                <div class="novedad">
+                    <img src="nuevos_servicios.jpg" alt="Nuevos servicios">
+                    <h3>Nuevos servicios</h3>
+                    <p>En el mes de julio, estamos emocionados de anunciar que hemos añadido nuevos servicios a nuestro centro de estética, incluyendo podología y psicología...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                <strong>© 2024 Para Estetica AESTHETIC. Creado por el Equipo 4</strong>
+            </p>
+        </div>
+        <div class="social-icons">
+            <a href="#" class="iconofacebook">
+                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/facebook.png') }}"
+                    alt="logofacebook" />
+            </a>
+            <a href="#" class="iconoinstagram">
+                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/instagram.png') }}"
+                    alt="logoinstagram" />
+            </a>
+            <a href="#" class="iconolinkedin">
+                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/linkedin.png') }}"
+                    alt="logolinkedin" />
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
