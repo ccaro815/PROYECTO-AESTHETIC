@@ -1,0 +1,186 @@
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: -10px 20px 20px 0;
+  background-color: #fff;
+}
+
+.top-header .logo img {
+  position: relative;
+  width: 150px;
+  height: 138px;
+  left: 72px;
+  top: 17px;
+  mix-blend-mode: darken;
+  border-radius: 80px;
+}
+
+.top-header .title {
+  text-align: center;
+  flex-grow: 0;
+}
+
+.top-header .title img {
+  width: 487px;
+  margin: 0;
+  font-size: 30px;
+}
+
+.top-header .contact-info {
+  text-align: right;
+  flex-grow: 50px;
+}
+
+.top-header .contact-info img {
+  margin: 0;
+  font-size: 20px;
+}
+
+header {
+    background-color: #d08590;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  header nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #5c273f;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .search-login {
+  display: flex;
+  align-items: center;
+}
+
+.search-login input {
+  padding: 3px;
+  margin-right: 10px;
+  border: 1px solid #ffe8ed;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-login a {
+  margin: 0 5px;
+  padding: 3px 10px;
+  background-color: #ffe8ed;
+  color: rgba(96, 43, 67, 1);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-login .user-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.search-login .user-avatar .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.search-login .user-avatar .user-name {
+  margin-right: 10px;
+  font-size: 18px;
+  color: rgba(96, 43, 67, 1);
+}
+
+.search-login .logout-link {
+  margin: 0 5px;
+  padding: 3px 10px;
+  background-color: #ffe8ed;
+  color: rgba(96, 43, 67, 1);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+
+.cart-button {
+    margin-right: 10px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+/* Rectangle 116 */
+.shopping-cart {
+position: absolute;
+width: 339px;
+height: 497px;
+left: 273px;
+top: 313px;
+background: #FFFFFF;
+border-radius: 50px;
+}
+
+
+.footer {
+  background-color: #d08590;
+  padding: 5px 20px;
+  display: flex;
+}
+
+.footer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-icons a {
+  margin-left: 10px;
+}
+/* Agregar estas clases en style.css para los botones y formularios */
+.login-container, .register-container, .roles-container, .assign-role-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d08590;
+  color: #fff;
+  cursor: pointer;
+}
