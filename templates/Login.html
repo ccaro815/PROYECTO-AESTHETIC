@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio de Sesión</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/Login.css') }}"/>
+    <link rel="stylesheet" href="../static/styles/Login.css"/>
 </head>
 <body>
     <div class="login-container">
@@ -12,7 +12,7 @@
             <h1>INICIAR</h1>
             <h1>SESION</h1>
             <a href="{{ url_for('home') }}">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/logo_encabezado.png') }}" alt="Aesthetic Estética Integral" class="logo">
+                <img src="../static/media/Imagenes Pag. Login/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
             </a>
             
         </div>
@@ -52,16 +52,13 @@
         </div>
         <div class="social-icons">
             <a href="#" class="iconofacebook">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/facebook.png') }}"
-                    alt="logofacebook" />
+                <img src="../static/media/Imagenes Pag. Login/facebook.png" alt="logofacebook" />
             </a>
             <a href="#" class="iconoinstagram">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/instagram.png') }}"
-                    alt="logoinstagram" />
+                <img src="../static/media/Imagenes Pag. Login/instagram.png" alt="logoinstagram" />
             </a>
             <a href="#" class="iconolinkedin">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/linkedin.png') }}"
-                    alt="logolinkedin" />
+                <img src="../static/media/Imagenes Pag. Login/linkedin.png" alt="logolinkedin" />
             </a>
         </div>
     </footer>

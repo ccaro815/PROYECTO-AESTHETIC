@@ -157,7 +157,7 @@ def confirm_email(token):
     db.session.commit()
 
     flash('Has confirmado tu correo electrónico. Gracias!', 'success')
-    return redirect(url_for('home'))
+    return redirect(url_for('Login.html'))
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():

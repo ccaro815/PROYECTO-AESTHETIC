@@ -10,10 +10,10 @@
     <div class="contenedor">
         <div class="panel-izquierdo">
             <h1>Novedades</h1>
-            <img src="../static/media/Imagenes Pag. Novedades/logo_encabezado.png" alt="Logo Aesthetic" class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="../static/media/Imagenes Pag. Novedades/logo_encabezado.png" alt="Logo Aesthetic" class="logo">
+            </a>
         </div>
-
-        <!-- Panel Derecho -->
         <div class="panel-derecho">
             <h2>Nuestras novedades</h2>
             <div class="novedades-links">
@@ -43,15 +43,15 @@
         </div>
         <div class="social-icons">
             <a href="#" class="iconofacebook">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/facebook.png') }}"
+                <img src="../static/media/Imagenes Pag. Novedades/facebook.png"
                     alt="logofacebook" />
             </a>
             <a href="#" class="iconoinstagram">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/instagram.png') }}"
+                <img src="../static/media/Imagenes Pag. Novedades/instagram.png"
                     alt="logoinstagram" />
             </a>
             <a href="#" class="iconolinkedin">
-                <img src="{{ url_for('static', filename='media/Imagenes Pag. Principal/linkedin.png') }}"
+                <img src="../static/media/Imagenes Pag. Novedades/linkedin.png"
                     alt="logolinkedin" />
             </a>
         </div>
