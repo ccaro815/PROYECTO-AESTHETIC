@@ -45,14 +45,16 @@ body {
     font-size: 30px;
     color: #525252;
     margin-bottom: 10px;
-    margin: 10px 150px;
+    margin: 10px;
+    text-align: center;
 }
 
 .login-right h3 {
     font-size: 38px;
     color: #D08590;
     margin-bottom: 10px;
-    margin: 10px 326px;
+    margin: 10px;
+    text-align: center;
 }
 
 form {
@@ -65,7 +67,7 @@ label {
     color: #000000;
     margin-bottom: 5px;
     align-self: flex-start;
-    margin: 10px 215px;
+    margin: 10px 230px;
 }
 
 input[type="email"],
@@ -76,6 +78,7 @@ input[type="password"] {
     border-radius: 5px;
     font-size: 1em;
     width: 45%;
+
 }
 
 .forgot-password {
@@ -92,7 +95,7 @@ input[type="password"] {
     font-size: 0.9em;
     margin-bottom: 20px;
     align-self: flex-start;
-    margin: 10px 320px;
+    margin: 10px 360px;
 }
 
 button {
@@ -101,21 +104,15 @@ button {
     align-items: center;
     padding: 13px 10px 12px;
     gap: 13px;
-    width: 420px;
+    width: 120px;
     height: 50px;
     background-color: #D08590;
-    /* Color de fondo rosado */
     color: white;
-    /* Texto en blanco */
     border: none;
-    /* Sin borde */
     border-radius: 6px;
-    /* Bordes redondeados */
     cursor: pointer;
     font-size: 16px;
-    /* Tamaño de fuente */
     margin: 10px 0;
-    /* Margen vertical */
 }
 
 button:hover {
@@ -141,20 +138,20 @@ button:hover {
 
 .footer {
     background-color: #d08590;
-    padding: 5px 20px;
+    padding: 5px 10px;
     display: flex;
-}
-
-.footer-content {
+  }
+  
+  .footer-content {
     flex: 1;
     text-align: left;
-}
-
-.social-icons {
+  }
+  
+  .social-icons {
     display: flex;
     justify-content: flex-end;
-}
-
-.social-icons a {
+  }
+  
+  .social-icons a {
     margin-left: 10px;
-}
+  }
