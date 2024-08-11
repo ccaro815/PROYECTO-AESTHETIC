@@ -233,6 +233,10 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
+@app.route('/carrito')
+def carrito():
+    return render_template('Carrito.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
 

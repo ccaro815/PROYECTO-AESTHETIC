@@ -27,7 +27,7 @@ body {
 .cart-button {
   margin-right: 10px;
   font-size: 20px;
-  background-color: transparent;
+  background-color: #ffe8ed;
   border: none;
   cursor: pointer;
 }

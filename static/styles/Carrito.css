@@ -1,0 +1,175 @@
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-button {
+  margin-right: 10px;
+  font-size: 20px;
+  background-color: #ffe8ed;
+  border: none;
+  cursor: pointer;
+}
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: -10px 20px 20px 0;
+  background-color: #fff;
+}
+
+.top-header .logo img {
+  position: relative;
+  width: 150px;
+  height: 138px;
+  left: 72px;
+  top: 17px;
+  mix-blend-mode: darken;
+  border-radius: 80px;
+}
+
+.top-header .title {
+  text-align: center;
+  flex-grow: 0;
+}
+
+.top-header .title img {
+  width: 487px;
+  margin: 0;
+  font-size: 30px;
+}
+
+.top-header .contact-info {
+  text-align: right;
+  flex-grow: 50px;
+}
+
+.top-header .contact-info img {
+  margin: 0;
+  font-size: 20px;
+}
+
+header {
+  background-color: #d08590;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+header nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #5c273f;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.search-login {
+  display: flex;
+  align-items: center;
+}
+
+.search-login input {
+  padding: 3px;
+  margin-right: 10px;
+  border: 1px solid #ffe8ed;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-login a {
+  margin: 0 5px;
+  padding: 3px 10px;
+  background-color: #ffe8ed;
+  color: rgba(96, 43, 67, 1);
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.search-login .user-avatar {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.left-panel, .right-panel {
+  flex: 1;
+  padding: 40px;
+}
+
+.left-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-panel h3 {
+  color: #d08590;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+.left-panel img {
+  max-width: 250px;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.right-panel h3 {
+  color: #d08590;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+
+.footer {
+  background-color: #d08590;
+  padding: 5px 20px;
+  display: flex;
+}
+
+.footer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.social-icons a {
+  margin-left: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d08590;
+  color: #fff;
+  cursor: pointer;
+}
+
