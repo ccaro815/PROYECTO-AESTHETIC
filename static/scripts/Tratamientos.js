@@ -1,17 +1,22 @@
-let hideText_btn = document.getElementById('hideText_btn');
-let gridItems = document.querySelectorAll('.grid-item');
+let serviceContainer = document.querySelector('.service-preview');
+let serviceBox = serviceContainer.querySelectorAll('.service');
 
-hideText_btn.addEventListener('click', () => {
-    if (hideText_btn.textContent === 'Ver Menos') {
-        for (let i = gridItems.length -1; i >= gridItems.length -4; i--){
-            gridItems[i].style.display = "none";
-        }
-        hideText_btn.textContent = 'Ver Mas';
-    }
-    else{
-        gridItems.forEach(item => {
-            item.style.display = 'block'; 
-        });
-        hideText_btn.textContent ='Ver Menos';
-    }       
+document.querySelectorAll('.grid-container .grid_item').forEach(grid_item =>{
+  grid_item.onclick = () =>{
+    serviceContainer.style.display = 'flex';
+    let name = grid_item.getAttribute('data-name');
+    serviceBox.forEach(service =>{
+      let target = service.getAttribute('data-target');
+      if(name == target){
+        service.classList.add('active');
+      }
+    });
+  };
+});
+
+serviceBox.forEach(close =>{
+  close.querySelector('.fa-times').onclick = () =>{
+    close.classList.remove('active');
+    serviceContainer.style.display = 'none';
+  };
 });
