@@ -9,10 +9,7 @@
 .top-header .logo img {
   position: relative;
   width: 150px;
-  height: 138px;
-  left: 72px;
-  top: 17px;
-  mix-blend-mode: darken;
+    height: 138px;
   border-radius: 80px;
 }
 
