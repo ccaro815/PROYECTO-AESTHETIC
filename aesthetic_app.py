@@ -156,8 +156,8 @@ def confirm_email(token):
     db.session.delete(verification_token)
     db.session.commit()
 
-    flash('Has confirmado tu correo electrónico. Gracias!', 'success')
-    return redirect(url_for('home'))
+    flash('Has confirmado tu correo electrónico. Gracias! Ahora puedes iniciar sesión.', 'success')
+    return redirect(url_for('login'))
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():
@@ -221,6 +221,10 @@ def servicios():
 def tratamientos_corporales():
     return render_template('service/Pag_Tratamiento.html')
 
+@app.route('/gif_card2')
+def gif_card2():
+    return render_template('service/Gif_card.html')
+
 @app.route('/novedades')
 def novedades():
     return render_template('Novedades.html')
@@ -233,12 +237,24 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
+<<<<<<< HEAD
 @app.route('/carrito')
 def carrito():
     return render_template('Carrito.html')
+=======
+@app.route('/create_service_category', methods=['GET', 'POST'])
+def create_service_category():
+    return render_template('create_service_category.html')
+
+@app.route('/manage_service_category')
+def manage_service_category():
+    return render_template('manage_service_category.html')
+
+>>>>>>> Codigo
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
 
 
