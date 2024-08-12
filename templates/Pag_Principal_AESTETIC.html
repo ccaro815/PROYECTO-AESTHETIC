@@ -36,8 +36,11 @@
         <div class="search-login">
             {% if user_email == 'cristianezequiel915@gmail.com' %}
             <div class="admin-buttons">
-                <button onclick="window.location.href='{{ url_for('manage_roles') }}'">Adm. Rol</button>
-                <button onclick="window.location.href='{{ url_for('assign_role') }}'">Asignar Rol</button>
+                <button class="admin-button" onclick="window.location.href='{{ url_for('manage_roles') }}'">Adm. Rol</button>
+                <button class="admin-button" onclick="window.location.href='{{ url_for('assign_role') }}'">Asignar Rol</button>
+
+                <button class="admin-button" onclick="window.location.href='{{ url_for('create_service_category') }}'">Crear Categoría</button>
+                <button class="admin-button" onclick="window.location.href='{{ url_for('manage_service_category') }}'">Gestionar Categorías</button>
             </div>
             {% else %}
             <input type="text" placeholder="Buscar" />

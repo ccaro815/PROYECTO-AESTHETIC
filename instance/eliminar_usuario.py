@@ -1,4 +1,3 @@
-#Borrar registros
 import sqlite3
 
 db_path = 'C:\\Users\\Flia Caro Sosa Veron\\Desktop\\PROYECTO-AESTHETIC\\instance\\users.db'
