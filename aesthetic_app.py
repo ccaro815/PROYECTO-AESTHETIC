@@ -221,6 +221,10 @@ def servicios():
 def tratamientos_corporales():
     return render_template('service/Pag_Tratamiento.html')
 
+@app.route('/tratamientos_corporales')
+def tratamiento_facial():
+    return render_template('service/Pag_TratamientoFacial.html')
+
 @app.route('/novedades')
 def novedades():
     return render_template('Novedades.html')
