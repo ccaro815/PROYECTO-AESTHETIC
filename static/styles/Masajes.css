@@ -72,11 +72,12 @@ body {
 .left-panel img {
     position: absolute;
     display: block;
-    max-height: 65vh;
+    width: 49%;
+    height: 95%;
     background-size: cover;
     border-radius: 30px;
     object-fit: cover;
-}
+  }
 
 .right-panel {
     background-color: #fff;

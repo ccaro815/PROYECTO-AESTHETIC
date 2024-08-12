@@ -4,8 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="static/styles/Masajes.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="left-panel">
+
+            <a href="{{ url_for('servicios') }}"..>
+                <img src="static/media/Imagenes Pag. Masajes/masajeslogo.jpg" alt="Aesthetic Estética Integral">
+                <div class="informacion">
+                    <h1>Masajes</h1>
+                    <p>"Libera el estrés y las tensiones del día a día con nuestros masajes relajantes. Cada sesión está diseñada para ofrecerte una experiencia de bienestar total, utilizando técnicas que promueven la relajación muscular y mental.</p>
+                    <p>Sumérgete en un estado de calma y renovación, recargando tu energía para afrontar cada día con vitalidad."</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="right-panel">
+
+            <div class="image-block">
+                <div class="grid-container">
+                    <div class="grid_item" data-name="p-1">
+                        <img src="static/media/Imagenes Pag. Masajes/masajes1.png">
+                        <div class="overlay">
+                            <h2>MASAJE ABDOMINAL</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-2">
+                        <img src="static/media/Imagenes Pag. Masajes/masajes2.png">
+                        <div class="overlay">
+                            <h2>PIEDRAS CALIENTES</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-3">
+                        <img src="static/media/Imagenes Pag. Masajes/masajes3.jpg">
+                        <div class="overlay">
+                            <h2>MASAJE PROFUNDO</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-4">
+                        <img src="static/media/Imagenes Pag. Masajes/masajes4.png">
+                        <div class="overlay">
+                            <h2>MASAJE DEPORTIVO</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-preview">
+        <div class="service" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <img src="static/media/Imagenes Pag. Masajes/masajes1.png">
+            <h3>MASAJE ABDOMINAL</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+        
+        <div class="service" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <img src="static/media/Imagenes Pag. Masajes/masajes2.png">
+            <h3>PIEDRAS CALIENTES</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+
+        <div class="service" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <img src="static/media/Imagenes Pag. Masajes/masajes3.jpg">
+            <h3>MASAJE PROFUNDO</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+
+        <div class="service" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <img src="static/media/Imagenes Pag. Masajes/masajes4.png">
+            <h3>MASAJE DEPORTIVO</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../static/scripts/Servicios.js"></script>
 </body>
 </html>
