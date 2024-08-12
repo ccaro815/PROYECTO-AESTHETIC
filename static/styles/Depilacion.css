@@ -15,8 +15,6 @@ body {
    
 }
 
-
-
 .left-panel {
     background-color: #f5d9e0;
     display: block;
@@ -25,20 +23,16 @@ body {
     
 }
 
-
-
 .left-panel, .right-panel {
     flex: 1;
     padding: 5px;
 }
-
 
 .left-panel h1 {
     color: #6C374D;
     font-size: 46px;
     
 }
-
 
 .informacion{
     position: absolute;
@@ -50,8 +44,6 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-
-
 
 .left-panel .informacion{
     width: 50%;
@@ -67,12 +59,11 @@ body {
     width: 650px;
 }
 
-
-
 .left-panel img {
     position: absolute;
     display: block;
-    max-height: 65vh;
+    width: 49%;
+    height: 95%;
     background-size: cover;
     border-radius: 30px;
     object-fit: cover;
