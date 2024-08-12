@@ -221,9 +221,21 @@ def servicios():
 def tratamientos_corporales():
     return render_template('service/Pag_Tratamiento.html')
 
-@app.route('/tratamientos_corporales')
+@app.route('/tratamientos_facial')
 def tratamiento_facial():
     return render_template('service/Pag_TratamientoFacial.html')
+
+@app.route('/tratamientos_depilacion')
+def tratamiento_depilacion():
+    return render_template('service/Pag_Depilacion.html')
+
+@app.route('/tratamientos_spa_de_manos')
+def tratamiento_spa_de_manos():
+    return render_template('service/Pag_SpaDeManos.html')
+
+@app.route('/tratamientos_masajes')
+def tratamiento_masajes():
+    return render_template('service/Pag_Masajes.html')
 
 @app.route('/gif_card2')
 def gif_card2():
