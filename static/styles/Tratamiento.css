@@ -72,7 +72,8 @@ body {
 .left-panel img {
     position: absolute;
     display: block;
-    max-height: 69vh;
+    width: 49%;
+    height: 95%;
     border-radius: 30px;
     object-fit: cover;
 }
