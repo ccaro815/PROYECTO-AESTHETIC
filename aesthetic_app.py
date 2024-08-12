@@ -156,8 +156,8 @@ def confirm_email(token):
     db.session.delete(verification_token)
     db.session.commit()
 
-    flash('Has confirmado tu correo electrónico. Gracias!', 'success')
-    return redirect(url_for('home'))
+    flash('Has confirmado tu correo electrónico. Gracias! Ahora puedes iniciar sesión.', 'success')
+    return redirect(url_for('login'))
 
 @app.route('/manage_roles', methods=['GET', 'POST'])
 def manage_roles():
