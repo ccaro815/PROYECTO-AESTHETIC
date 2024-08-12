@@ -1,6 +1,6 @@
 import sqlite3
 
-db_path = 'C:\\Users\\Flia Caro Sosa Veron\\Desktop\\PROYECTO-AESTHETIC\\instance\\users.db'
+db_path = 'C:\\Users\\CMVargas\\Desktop\\PROYECTO-AESTHETIC-1\\instance\\users.db'
 conn = sqlite3.connect(db_path)
 cursor = conn.cursor()
 
