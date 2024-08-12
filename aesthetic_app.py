@@ -221,6 +221,10 @@ def servicios():
 def tratamientos_corporales():
     return render_template('service/Pag_Tratamiento.html')
 
+@app.route('/gif_card2')
+def gif_card2():
+    return render_template('service/Gif_card.html')
+
 @app.route('/novedades')
 def novedades():
     return render_template('Novedades.html')
@@ -235,6 +239,17 @@ def contactos():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
+@app.route('/create_service_category', methods=['GET', 'POST'])
+@login_required
+def create_service_category():
+    return render_template('create_service_category.html')
+
+@app.route('/manage_service_category')
+@login_required
+def manage_service_category():
+    return render_template('manage_service_category.html')
+
 
 
 
