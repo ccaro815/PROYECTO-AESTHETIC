@@ -9,8 +9,7 @@
 <body>
     <div class="login-container">
         <div class="login-left">
-            <h1>INICIAR</h1>
-            <h1>SESION</h1>
+          
             <a href="{{ url_for('home') }}">
                 <img src="../static/media/Imagenes Pag. Login/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
             </a>
@@ -18,7 +17,7 @@
         </div>
         <div class="login-right">
             <h3>Iniciar Sesion</h3>
-            <h2>Bienvenida/o a nuestro centro de estética</h2>
+            <h2>Bienvenidos a nuestro centro de estética</h2>
 
             {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
@@ -51,7 +50,7 @@
             </p>
         </div>
         <div class="social-icons">
-            <a href="#" class="iconofacebook">
+            <a href="https://www.facebook.com/profile.php?id=61563739507826" class="iconofacebook">
                 <img src="../static/media/Imagenes Pag. Login/facebook.png" alt="logofacebook" />
             </a>
             <a href="#" class="iconoinstagram">
