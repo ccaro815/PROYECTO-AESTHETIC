@@ -237,18 +237,17 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
-    
 @app.route('/create_service_category', methods=['GET', 'POST'])
-@login_required
 def create_service_category():
     return render_template('create_service_category.html')
 
 @app.route('/manage_service_category')
-@login_required
 def manage_service_category():
     return render_template('manage_service_category.html')
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
 
 
 
