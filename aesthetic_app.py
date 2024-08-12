@@ -237,11 +237,10 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
-<<<<<<< HEAD
 @app.route('/carrito')
 def carrito():
     return render_template('Carrito.html')
-=======
+
 @app.route('/create_service_category', methods=['GET', 'POST'])
 def create_service_category():
     return render_template('create_service_category.html')
@@ -249,8 +248,6 @@ def create_service_category():
 @app.route('/manage_service_category')
 def manage_service_category():
     return render_template('manage_service_category.html')
-
->>>>>>> Codigo
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -17,7 +17,7 @@ body, html {
 }
 
 .container h1 {
-    color: #4CAF50;
+    color: #D08590;
 }
 
 .container p {
@@ -26,7 +26,13 @@ body, html {
 }
 
 .container a {
-    color: #4CAF50;
+    color: #FFFFFF;
     text-decoration: none;
-    font-weight: bold;
+    align-items: center;
+    padding: 13px 10px 12px;
+    gap: 13px;
+    width: 120px;
+    background: #D08590;
+    border-radius: 6px;
+
 }
