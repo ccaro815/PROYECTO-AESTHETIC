@@ -62,9 +62,6 @@ body {
     text-align: center;
 }
 
-.login-right h2{
-    
-}
 
 form {
     display: flex;
@@ -76,7 +73,7 @@ label {
     color: #000000;
     margin-bottom: 5px;
     align-self: flex-start;
-    margin: 10px 230px;
+    margin: 10px 160px;
 }
 
 input[type="email"],

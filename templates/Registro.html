@@ -9,16 +9,15 @@
 <body>
     <div class="container">
         <div class="left-panel">
-            <h1>CREA</h1>
-            <h3>TU</h3>
-            <h4>CUENTA</h4>
+            <h1>CREA TU CUENTA</h1>
+           
             <a href="{{ url_for('home') }}">
                 <img src="../static/media/Imagenes Pag. Registro/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
             </a>
         </div>
         <div class="right-panel">
             <h2>Crear Cuenta</h2>
-            <h5>Bienvenida/o a nuestro centro de estetica </h5>
+            <h5>Bienvenidos a Aesthetic </h5>
             <form action="{{ url_for('register') }}" method="post">
                 <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
               
@@ -32,7 +31,7 @@
                 
                 <div class="terms">
                   <input type="checkbox" id="terms" name="terms" required>
-                  <label for="terms">He leído, Acepto el<a href="#"> aviso legal y politica de Aesthetic</a></label>
+                  <label for="terms">He leído y acepto los<a href="#"> terminos y condiciones de Aesthetic</a></label>
                 </div>
                 <button type="submit">REGISTRARSE</button>
               </form>
@@ -44,7 +43,7 @@
             <p><strong>© 2024 Para Estetica AESTHETIC. Creado por el Equipo 4</strong></p>
         </div>
         <div class="social-icons">
-            <a href="#" class="iconofacebook">
+            <a href="https://www.facebook.com/profile.php?id=61563739507826" class="iconofacebook">
                 <img src="../static/media/Imagenes Pag. Registro/facebook.png" alt="logofacebook" />
             </a>
             <a href="#" class="iconoinstagram">
