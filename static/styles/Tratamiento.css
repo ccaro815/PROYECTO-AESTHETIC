@@ -192,9 +192,29 @@ body {
     font-size: 2.5rem;
  }
 
+ .service-preview .service .stars{
+    padding:1rem 0;
+    font-size: 1.7rem;
+ }
+ 
+ .service-preview .service .stars i{
+    color:#cda434;
+ }
+ 
+ .service-preview .service .stars span{
+    color:#999;
+ }
+ 
+
 .service-preview .service p{
     font-size: 1.6rem;
     color:#777;
+ }
+
+ .service-preview .service .price{
+    padding:1rem 0;
+    font-size: 2.5rem;
+    color:#cda434;
  }
 
 .service-preview .service .buttons{
