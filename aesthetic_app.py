@@ -237,10 +237,6 @@ def tratamiento_spa_de_manos():
 def tratamiento_masajes():
     return render_template('service/Pag_Masajes.html')
 
-@app.route('/gif_card2')
-def gif_card2():
-    return render_template('service/Gif_card.html')
-
 @app.route('/novedades')
 def novedades():
     return render_template('Novedades.html')
