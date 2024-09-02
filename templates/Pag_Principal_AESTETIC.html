@@ -44,7 +44,10 @@
                 <button class="admin-button" onclick="window.location.href='{{ url_for('manage_service_category') }}'">Gestionar Categorías</button>
             </div>
             {% else %}
-            <input type="text" placeholder="Buscar" />
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar servicio..." oninput="showSuggestions(this.value)" autocomplete="off" />
+                <div id="suggestions" class="suggestions-list"></div>
+            </div>
             {% endif %}
             <button class="cart-button" onclick="window.location.href='{{ url_for('carrito') }}'">🛒</button>
             {% if user_name %}
@@ -143,14 +146,6 @@
             <p>una experiencia transformadora que realza tu belleza natural.</p>
         </div>
     </div>
-
-    <div class"politicas">
-        <h5>Nuestras politicas</h5>
-    <hr>
-    <a href="aestheticestetica22@gmail.com" title="Enviar correo a aesthetic" > Enviar mail</a>
-    </div>
-
-
     <footer class="footer">
         <div class="footer-content">
             <p>
