@@ -310,13 +310,14 @@ button:hover {
 .search-container {
   position: relative;
   width: 200px; /* Ajusta según tu diseño */
+  color: #FFE8ED;
 }
 
 #search-input {
   width: 80%;
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ddd;
+  border: 1px solid #FFE8ED;
   border-radius: 4px;
 }
 
@@ -342,6 +343,10 @@ button:hover {
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
+
+
+
+
 
 
 
