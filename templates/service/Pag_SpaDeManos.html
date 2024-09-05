@@ -4,8 +4,102 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <link rel="stylesheet" href="/static/styles/TratamientoFacial.css">
 </head>
 <body>
-    
+    <div class="container">
+        <div class="left-panel">
+
+            <a href="{{ url_for('servicios') }}">
+                <img src="/static/media/Imagenes Pag.Spa De Manos/Img Principal.jpeg" alt="Aesthetic Estética Integral">
+                <div class="informacion">
+                    <h1>Tratamiento Facial</h1>
+                    <p>"Descubre la última tecnología en tratamientos corporales. Nuestro equipo de aparatología avanzada trabaja en armonía con tu cuerpo para esculpir y revitalizar tu figura. Cada sesión está diseñada para ofrecer resultados visibles, desde la reducción de medidas hasta la mejora en la textura de tu piel. . Transforma tu cuerpo con cuidados especializados."</p>
+                </div>
+            </a>
+            
+        </div>
+        <div class="right-panel">
+
+            <div class="image-block">
+                <div class="grid-container">
+                    <div class="grid_item" data-name="p-1">
+                        <img src="/static/media/Imagenes Pag.Facial/Facial1.png">
+                        <div class="overlay">
+                            <h2>Bienvenido a Aestethic</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-2">
+                        <img src="/static/media/Imagenes Pag.Facial/Facial2.jfif">
+                        <div class="overlay">
+                            <h2>Bienvenido a Aestethic</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-3">
+                        <img src="/static/media/Imagenes Pag.Facial/Facial3.png">
+                        <div class="overlay">
+                            <h2>Bienvenido a Aestethic</h2>
+                        </div>
+                    </div>
+                    <div class="grid_item" data-name="p-4">
+                        <img src="/static/media/Imagenes Pag.Facial/Facial4.jfif">
+                        <div class="overlay">
+                            <h2>Bienvenido a Aestethic</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-preview">
+        <div class="service" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <img src="/static/media/Imagenes Pag.Facial/Facial1.png">
+            <h3>Masajes</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+        
+        <div class="service" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <img src="/static/media/Imagenes Pag.Facial/Facial2.jfif">
+            <h3>Masajes</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+
+        <div class="service" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <img src="/static/media/Imagenes Pag.Facial/Facial3.png">
+            <h3>Masajes</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+
+        <div class="service" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <img src="/static/media/Imagenes Pag.Facial/Facial4.jfif">
+            <h3>Masajes Con maquina</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi nam ea, error tempora nesciunt beatae voluptas vel aliquam asperiores accusantium, maiores natus impedit dicta tenetur eaque sequi ratione quod vero.</p>
+            <div class="buttons">
+                <a href="#" class="buy">Reservar ahora</a>
+                <a href="#" class="cart">Agregar al Carrito</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/scripts/Servicios.js"></script>
 </body>
 </html>
