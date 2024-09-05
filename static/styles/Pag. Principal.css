@@ -235,7 +235,15 @@ p {
   margin-bottom: 5px;
 }
 
+.politicas{
+  text-align: center;
+  font-size: 20px;
+}
 
+.politicas h3{
+  display: inline-block;
+  margin-right: 40px;
+}
 
 .footer {
   background-color: #d08590;
