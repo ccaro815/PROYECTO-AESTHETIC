@@ -319,15 +319,14 @@ button:hover {
 
 .search-container {
   position: relative;
-  width: 200px; /* Ajusta según tu diseño */
-  color: #FFE8ED;
+  width: 300px; /* Ajusta el ancho según el diseño que desees */
 }
 
 #search-input {
   width: 80%;
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #FFE8ED;
+  border: 1px solid #ddd;
   border-radius: 4px;
 }
 
@@ -342,7 +341,7 @@ button:hover {
   z-index: 1000;
   max-height: 150px;
   overflow-y: auto;
-  display: none; /* Oculto por defecto */
+  display: none;
 }
 
 .suggestion-item {
@@ -353,6 +352,8 @@ button:hover {
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
+
+
 
 
 

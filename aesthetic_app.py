@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session
+from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -212,6 +212,20 @@ def restricted_page():
         flash('No tienes permiso para acceder a esta página', 'danger')
         return redirect(url_for('home'))
     return render_template('restricted_page.html')
+
+@app.route('/buscar_servicios', methods=['GET'])
+def buscar_servicios():
+    query = request.args.get('query', '').lower()
+    servicios = [
+        {'nombre': 'Tratamientos Faciales', 'ruta': url_for('tratamiento_facial')},
+        {'nombre': 'Depilación', 'ruta': url_for('tratamiento_depilacion')},
+        {'nombre': 'Masajes', 'ruta': url_for('tratamiento_masajes')},
+        {'nombre': 'Spa de Manos', 'ruta': url_for('tratamiento_spa_de_manos')},
+        {'nombre': 'Tratamientos Corporales', 'ruta': url_for('tratamientos_corporales')}
+    ]
+    resultados = [s for s in servicios if query in s['nombre'].lower()]
+    
+    return jsonify(resultados)
 
 @app.route('/servicios')
 def servicios():
