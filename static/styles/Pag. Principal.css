@@ -220,13 +220,13 @@ header nav a {
 
 .content3 {
   flex: 1;
-  margin-right: 0px;
+  margin-right: 10px;
   text-align: right;
   font-size: 15px;
 }
 
 h2, h3, h4 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-size: 20px;
 }
 
@@ -234,14 +234,45 @@ p {
   margin-bottom: 5px;
 }
 
-.politicas{
+h2{
+  font-size: 30px;
   text-align: center;
+}
+
+
+.politicas {
+  display: flex;
+  justify-content: space-around;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 10px auto; /* Centra horizontalmente */
+}
+
+
+.columna {
+  flex: 1;
+  margin-right: 10px;
+  text-align: left;
+  padding: 10px 50px;
+}
+
+.columna h2 {
+  color: #D08590; 
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.columna p{
+  font-size: 18px;
+}
+
+.columna ul{
+  margin: 20px;
   font-size: 20px;
 }
 
-.politicas h3{
-  display: inline-block;
-  margin-right: 40px;
+.columna li{
+  padding: 5px;
 }
 
 .footer {
