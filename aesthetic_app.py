@@ -265,7 +265,11 @@ def contactos():
 
 @app.route('/carrito')
 def carrito():
-    return render_template('Carrito.html')
+    user_name = session.get('user_name', None)
+    user_apellido = session.get('user_apellido', None)
+    user_email = session.get('user_email', None)
+    avatar_color = session.get('avatar_color', None)
+    return render_template('Carrito.html', user_name=user_name, user_apellido=user_apellido, user_email=user_email, avatar_color=avatar_color)
 
 @app.route('/create_service_category', methods=['GET', 'POST'])
 def create_service_category():
