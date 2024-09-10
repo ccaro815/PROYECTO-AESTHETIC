@@ -27,7 +27,6 @@ const suggestionsData = [
   { nombre: 'Masajes', ruta: '/tratamientos_masajes' },
   { nombre: 'Spa de Manos', ruta: '/tratamientos_spa_de_manos' },
   { nombre: 'Gift Card', ruta: '/gif_card' }
-
 ];
 
 function showSuggestions(query) {
@@ -38,15 +37,18 @@ function showSuggestions(query) {
     suggestionsContainer.style.display = 'none';
     return;
   }
+
   const filteredSuggestions = suggestionsData.filter(item => item.nombre.toLowerCase().includes(query.toLowerCase()));
   filteredSuggestions.forEach(suggestion => {
     const suggestionItem = document.createElement('div');
     suggestionItem.textContent = suggestion.nombre;
     suggestionItem.classList.add('suggestion-item');
+
     suggestionItem.onclick = () => {
       document.getElementById('search-input').value = suggestion.nombre;
       window.location.href = suggestion.ruta;
     };
+
     suggestionsContainer.appendChild(suggestionItem);
   });
 
@@ -56,7 +58,6 @@ function showSuggestions(query) {
 function searchService(event) {
   if (event.key === 'Enter') {
     const query = document.getElementById('search-input').value.toLowerCase();
-
     const match = suggestionsData.find(item => item.nombre.toLowerCase().includes(query));
     if (match) {
       window.location.href = match.ruta;

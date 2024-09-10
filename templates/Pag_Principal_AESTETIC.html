@@ -39,7 +39,6 @@
             <div class="admin-buttons">
                 <button class="admin-button" onclick="window.location.href='{{ url_for('manage_roles') }}'">Adm. Rol</button>
                 <button class="admin-button" onclick="window.location.href='{{ url_for('assign_role') }}'">Asignar Rol</button>
-
                 <button class="admin-button" onclick="window.location.href='{{ url_for('create_service_category') }}'">Crear Categoría</button>
                 <button class="admin-button" onclick="window.location.href='{{ url_for('manage_service_category') }}'">Gestionar Categorías</button>
             </div>
@@ -52,8 +51,7 @@
             <button class="cart-button" onclick="window.location.href='{{ url_for('carrito') }}'">🛒</button>
             {% if user_name %}
             <div class="user-avatar">
-                <div class="avatar" style="background-color: {{ avatar_color }};">{{ user_name[0] }}{{ user_apellido[0]
-                    }}</div>
+                <div class="avatar" style="background-color: {{ avatar_color }};">{{ user_name[0] }}{{ user_apellido[0] }}</div>
                 <span class="user-name">{{ user_name }}</span>
                 <a href="{{ url_for('logout') }}" class="logout-link">Cerrar Sesión</a>
             </div>
@@ -63,6 +61,23 @@
             {% endif %}
         </div>
     </header>
+
+    <!-- Iterar sobre los servicios -->
+    <div class="services">
+        {% for service in services %}
+        <div class="service" id="service-{{ service.id }}">
+            <h3>{{ service.name }}</h3>
+
+            {% if session.get('user_id') %}
+            <button class="favorite-btn" onclick="toggleFavoriteService({{ service.id }})">
+                ❤️
+            </button>
+            {% else %}
+            <p><a href="{{ url_for('login') }}">Inicia sesión</a> para marcar este servicio como favorito</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
 
     <div class="welcome-message">
         <h1>BIENVENIDO AL CENTRO DE ESTÉTICA AESTHETIC</h1>
