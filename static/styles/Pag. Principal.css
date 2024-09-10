@@ -383,6 +383,11 @@ button:hover {
   background-color: #f0f0f0;
 }
 
+.favorite-btn.favorited {
+  color: red;
+}
+
+
 
 
 

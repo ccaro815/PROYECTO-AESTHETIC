@@ -51,6 +51,18 @@ class VerificationToken(db.Model):
     expires_at = db.Column(db.DateTime, nullable=False)
     user = db.relationship('User', backref=db.backref('verification_tokens', lazy=True))
 
+class Service(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), nullable=False)
+
+class FavoriteService(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('favorite_services', lazy=True))
+    service = db.relationship('Service', backref=db.backref('favorite_services', lazy=True))
+
+
 def generate_random_color():
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
 
@@ -79,7 +91,10 @@ def home():
     user_apellido = session.get('user_apellido', None)
     user_email = session.get('user_email', None)
     avatar_color = session.get('avatar_color', None)
-    return render_template('Pag_Principal_AESTETIC.html', user_name=user_name, user_apellido=user_apellido, user_email=user_email, avatar_color=avatar_color)
+    
+    services = Service.query.all()
+
+    return render_template('Pag_Principal_AESTETIC.html', user_name=user_name, user_apellido=user_apellido, user_email=user_email, avatar_color=avatar_color, services=services)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -229,7 +244,14 @@ def buscar_servicios():
 
 @app.route('/servicios')
 def servicios():
-    return render_template('Servicios.html')
+    user_id = session.get('user_id', None)
+    if not user_id:
+        flash('Por favor inicia sesión para acceder a todas las funciones', 'danger')
+        return redirect(url_for('login'))
+    
+    services = Service.query.all()
+
+    return render_template('Servicios.html', user_id=user_id, services=services)
 
 @app.route('/tratamientos_corporales')
 def tratamientos_corporales():
@@ -278,6 +300,39 @@ def create_service_category():
 @app.route('/manage_service_category')
 def manage_service_category():
     return render_template('manage_service_category.html')
+
+@app.route('/add_favorite_service/<int:service_id>', methods=['POST'])
+def add_favorite_service(service_id):
+    if 'user_id' not in session:
+        return jsonify({'error': 'Usuario no autenticado'}), 401
+
+    service = Service.query.get_or_404(service_id)
+    
+    if service.name.lower() == 'gif card':
+        return jsonify({'error': 'No puedes marcar la Gift Card como favorita'}), 403
+
+    user_id = session['user_id']
+    favorite = FavoriteService.query.filter_by(user_id=user_id, service_id=service_id).first()
+    if not favorite:
+        new_favorite = FavoriteService(user_id=user_id, service_id=service_id)
+        db.session.add(new_favorite)
+        db.session.commit()
+        return jsonify({'success': 'Servicio marcado como favorito'}), 200
+    return jsonify({'error': 'Servicio ya está marcado como favorito'}), 400
+
+@app.route('/remove_favorite_service/<int:service_id>', methods=['POST'])
+def remove_favorite_service(service_id):
+    if 'user_id' not in session:
+        return jsonify({'error': 'Usuario no autenticado'}), 401
+
+    user_id = session['user_id']
+    favorite = FavoriteService.query.filter_by(user_id=user_id, service_id=service_id).first()
+
+    if favorite:
+        db.session.delete(favorite)
+        db.session.commit()
+        return jsonify({'success': 'Servicio eliminado de favoritos'}), 200
+    return jsonify({'error': 'Servicio no estaba en favoritos'}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -72,6 +72,30 @@ document.addEventListener('click', function(event) {
   }
 });
 
+function toggleFavoriteService(serviceId) {
+  let favoriteButton = document.querySelector(`#service-${serviceId} .favorite-btn`);
+  let url = favoriteButton.classList.contains('favorited') ? `/remove_favorite_service/${serviceId}` : `/add_favorite_service/${serviceId}`;
+
+  fetch(url, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      credentials: 'same-origin'
+  })
+  .then(response => response.json())
+  .then(data => {
+      if (data.success) {
+          favoriteButton.classList.toggle('favorited');
+          alert(data.success);
+      } else {
+          alert(data.error);
+      }
+  })
+  .catch(error => console.error('Error:', error));
+}
+
+
 
 
 

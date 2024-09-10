@@ -61,6 +61,18 @@
             <a href="{{ url_for('login') }}">Iniciar Sesión</a>
             <a href="{{ url_for('register') }}">Crear Cuenta</a>
             {% endif %}
+            <div class="services">
+                {% for service in services %}
+                <div class="service" id="service-{{ service.id }}">
+                    <h3>{{ service.name }}</h3>
+                    {% if user_id %}
+                    <button class="favorite-btn" onclick="toggleFavoriteService({{ service.id }})">❤️ Marcar como favorito</button>
+                    {% else %}
+                    <p><a href="{{ url_for('login') }}">Inicia sesión</a> para marcar este servicio como favorito</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
         </div>
     </header>
 
@@ -201,3 +213,8 @@
 </body>
 
 </html>
+<ul>
+    {% for service in services %}
+      <li>{{ service.name }}</li>
+    {% endfor %}
+  </ul>
