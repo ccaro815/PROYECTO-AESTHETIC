@@ -51,6 +51,18 @@ class VerificationToken(db.Model):
     expires_at = db.Column(db.DateTime, nullable=False)
     user = db.relationship('User', backref=db.backref('verification_tokens', lazy=True))
 
+class Service(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(150), nullable=False)
+
+class FavoriteService(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('favorite_services', lazy=True))
+    service = db.relationship('Service', backref=db.backref('favorite_services', lazy=True))
+
+
 def generate_random_color():
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
 
@@ -265,7 +277,11 @@ def contactos():
 
 @app.route('/carrito')
 def carrito():
-    return render_template('Carrito.html')
+    user_name = session.get('user_name', None)
+    user_apellido = session.get('user_apellido', None)
+    user_email = session.get('user_email', None)
+    avatar_color = session.get('avatar_color', None)
+    return render_template('Carrito.html', user_name=user_name, user_apellido=user_apellido, user_email=user_email, avatar_color=avatar_color)
 
 @app.route('/create_service_category', methods=['GET', 'POST'])
 def create_service_category():
