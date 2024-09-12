@@ -39,6 +39,12 @@ body {
   background-color: #fff;
 }
 
+.menu-header {
+	display: flex;
+	gap: 35px;
+	align-items: center;
+}
+
 .top-header .logo img {
   position: relative;
   width: 150px;
@@ -384,7 +390,22 @@ button:hover {
 }
 
 
+.container-list-favorites {
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(400px);
+	background-color: #555;
+	opacity: 0;
+	width: 400px;
+	height: 100vh;
+	transition: all 0.5s linear;
+}
 
+.container-list-favorites.show {
+	opacity: 1;
+	transform: translateX(0);
+}
 
 
 

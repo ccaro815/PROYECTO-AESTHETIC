@@ -8,6 +8,13 @@
     <link rel="shortcut icon" type="image/x" href="../static/media/Imagenes Pag. Principal/logo_encabezado.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../static/styles/Pag. Principal.css" />
+    <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 </head>
 
 <body>
@@ -25,12 +32,35 @@
             <img src="../static/media/Imagenes Pag. Principal/contactos.png"
                 alt="contact-info" />
         </div>
+        <div class="menu-header">
+            <button id="button-header-favorite">
+                <i class="fa-solid fa-heart"></i>
+                <span class="counter-favorite">0</span>
+            </button>
+            <button>
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="counter-cart">0</span>
+            </button>
+        </div>
+        <div class="container-list-favorites">
+            <div class="header-favorite">
+                <h3>Mis Favoritos</h3>
+                <i class="fa-solid fa-xmark" id="btn-close"></i>
+            </div>
+            <hr />
+            <div class="list-favorites">
+                <div class="card-favorite">
+                    <p class="title">Audífonos Bluetooth Pro</p>
+                    <p>$150</p>
+                </div>
+            </div>
+        </div>
     </div>
     <header>
         <nav>
             <a href="{{ url_for('home') }}">Inicio</a>
             <a href="{{ url_for('servicios') }}">Servicios</a>
-            <a href="{{ url_for('gif_card') }}">Turnos</a>
+            <a href="{{ url_for('gif_card') }}">Gift Card</a>
             <a href="{{ url_for('novedades') }}">Novedades</a>
             <a href="{{ url_for('contactos') }}">Contáctanos</a>
         </nav>
@@ -149,9 +179,7 @@
 
    
     <h2>Nuestras politicas</h2>
-    <hr>
     <div class="politicas">
-        <hr>
         <div class="columna">
             <h2>Normas del local</h2>
             <ul>
@@ -172,7 +200,7 @@
             <h2>Políticas de cancelación</h2>
             <p>Agrega la fecha de tus turnos para obtener los detalles de la cancelación de este servicio.</p>
         </div>
-        <hr>
+  
     </div>
     <footer class="footer">
         <div class="footer-content">
@@ -198,6 +226,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../static/scripts/Pag. Principal.js"></script>
+    <script src="../static/scripts/Favoritos.js"></script>
 </body>
 
 </html>

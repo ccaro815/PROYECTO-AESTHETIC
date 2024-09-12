@@ -5,8 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
     <link rel="stylesheet" href="../static/styles/Servicios.css">
+    <link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 </head>
 <body>
+    <header>
+        
+        <div class="menu-header">
+            <button id="button-header-favorite">
+                <i class="fa-solid fa-star"></i>
+                <span class="counter-favorite">0</span>
+            </button>
+        </div>
+
+        <div class="container-list-favorites">
+            <div class="header-favorite">
+                <h3>Mis Favoritos</h3>
+                <i class="fa-solid fa-xmark" id="btn-close"></i>
+            </div>
+            <hr />
+            <div class="list-favorites">
+                <div class="card-favorite">
+                    <p class="title">Audífonos Bluetooth Pro</p>
+                    <p>$150</p>
+                </div>
+            </div>
+        </div>
+    </header>
     <div class="container">
         <div class="left-panel">
             <h1>Servicios</h1>
@@ -46,6 +76,7 @@
             </a>
         </div>
     </footer>
+    <script src="../static/scripts/Favoritos.js"></script>
 </body>
 </html>
 

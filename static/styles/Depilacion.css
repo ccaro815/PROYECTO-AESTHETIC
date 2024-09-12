@@ -134,6 +134,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
+
 .grid_item:hover .overlay{
     height: 100%;
     cursor: pointer;
