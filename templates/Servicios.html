@@ -17,11 +17,14 @@
     <header>
         
         <div class="menu-header">
+            {% if g.user_name %}
             <button id="button-header-favorite">
-                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-heart"></i>
                 <span class="counter-favorite">0</span>
             </button>
+            {% endif %}
         </div>
+        
 
         <div class="container-list-favorites">
             <div class="header-favorite">

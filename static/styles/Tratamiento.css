@@ -15,16 +15,12 @@ body {
    
 }
 
-
-
 .left-panel {
     background-color: #f5d9e0;
     display: block;
-    flex-direction: column;    
+    flex-direction: column;
     align-items: center;
-    
 }
-
 
 
 .left-panel, .right-panel {
@@ -39,7 +35,6 @@ body {
     
 }
 
-
 .informacion{
     position: absolute;
     margin-top: 47px;
@@ -50,8 +45,6 @@ body {
     opacity: 0;
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
-
-
 
 .left-panel .informacion{
     width: 50%;
@@ -68,15 +61,14 @@ body {
 }
 
 
-
 .left-panel img {
     position: absolute;
     display: block;
     width: 49%;
     height: 95%;
     border-radius: 30px;
-    opacity: .5;
     object-fit: cover;
+    opacity: .6;
 }
 
 .right-panel {
@@ -85,6 +77,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 90px;
 }
 
 .right-panel h1{
@@ -102,7 +95,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    gap: 35px;
+    gap: 18px;
 }
 
 .grid-container .grid_item{
@@ -117,8 +110,8 @@ body {
 }
 
 .grid_item img{
-    width: 100%;
-    height: 100%;
+    width: 95%;
+    height: 95%;
     border-radius: 30px;
 }
 
@@ -176,7 +169,7 @@ body {
  
 .service-preview .service img{
     height: 20rem;
-    width: 45rem;
+    width: 30rem;
  }
  
 .service-preview .service .fa-times{
@@ -193,29 +186,9 @@ body {
     font-size: 2.5rem;
  }
 
- .service-preview .service .stars{
-    padding:1rem 0;
-    font-size: 1.7rem;
- }
- 
- .service-preview .service .stars i{
-    color:#cda434;
- }
- 
- .service-preview .service .stars span{
-    color:#999;
- }
- 
-
 .service-preview .service p{
     font-size: 1.6rem;
     color:#777;
- }
-
- .service-preview .service .price{
-    padding:1rem 0;
-    font-size: 2.5rem;
-    color:#cda434;
  }
 
 .service-preview .service .buttons{
@@ -288,4 +261,147 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/*         MARCAR FAVORITOS         */
+
+.container-products {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 30px 0;
+	gap: 30px;
+}
+
+.card-product {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	cursor: pointer;
+}
+
+.content-card-product {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 5px;
+}
+
+.container-img {
+	height: 210px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.container-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.footer-card-product {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px;
+}
+
+
+.price {
+	font-weight: 700;
+	font-size: 24px;
+	color: #555;
+}
+
+.container-buttons-card {
+	display: flex;
+	gap: 20px;
+}
+
+.container-buttons-card button {
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0px 0px 15px #00000025;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 18px;
+}
+
+/* ********************************** */
+/*         LISTA DE FAVORITOS         */
+/* ********************************** */
+.container-list-favorites {
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(400px);
+	background-color: #555;
+	opacity: 0;
+	width: 400px;
+	height: 100vh;
+	transition: all 0.5s linear;
+}
+
+.container-list-favorites.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.header-favorite {
+	padding: 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-favorite i {
+	cursor: pointer;
+}
+
+.list-favorites {
+	padding: 35px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.list-favorites .card-favorite {
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0px 0px 20px #00000065;
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.card-favorite .title {
+	color: #000;
+	flex: 1;
+}
+
+.card-favorite p:last-child {
+	font-weight: 700;
+	font-size: 22px;
+	color: #000;
+}
+
+/* ------------------- */
+
+#added-favorite {
+	color: red;
+	display: none;
+}
+
+#favorite-regular.active {
+	background-color: red;
+	display: none;
+}
+
+#added-favorite.active {
+	display: block;
+	color: pink;
 }

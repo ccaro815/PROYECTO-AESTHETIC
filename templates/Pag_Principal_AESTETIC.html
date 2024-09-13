@@ -33,6 +33,7 @@
                 alt="contact-info" />
         </div>
         <div class="menu-header">
+            {% if user_name %}
             <button id="button-header-favorite">
                 <i class="fa-solid fa-heart"></i>
                 <span class="counter-favorite">0</span>
@@ -41,6 +42,7 @@
                 <i class="fa-solid fa-bag-shopping"></i>
                 <span class="counter-cart">0</span>
             </button>
+            {% endif %}
         </div>
         <div class="container-list-favorites">
             <div class="header-favorite">
@@ -226,7 +228,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../static/scripts/Pag. Principal.js"></script>
-    <script src="../static/scripts/Favoritos.js"></script>
+    <script src="/static/scripts/Favoritos.js"></script>
 </body>
 
 </html>

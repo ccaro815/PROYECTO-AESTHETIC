@@ -62,11 +62,12 @@ body {
 .left-panel img {
     position: absolute;
     display: block;
-    width: 49%;
+    width: 42%;
     height: 95%;
     background-size: cover;
     border-radius: 30px;
     object-fit: cover;
+    padding: 5px;
 }
 
 .right-panel {
@@ -259,4 +260,149 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/*         MARCAR FAVORITOS         */
+
+.container-products {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin: 20px 0;
+	gap: 30px;
+    padding: 5px;
+}
+
+.card-product {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	cursor: pointer;
+}
+
+.content-card-product {
+	display: flex;
+	flex-direction: column;
+	padding: 5px 5px;
+}
+
+.container-img {
+	height: 200px;
+	border-radius: 12px;
+	overflow: hidden;
+}
+
+.container-img img {
+	width: 90%;
+	height: 100%;
+	object-fit: cover;
+    margin-right: 200px;
+}
+
+.footer-card-product {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px;
+}
+
+
+.price {
+	font-weight: 700;
+	font-size: 24px;
+	color: #555;
+}
+
+.container-buttons-card {
+	display: flex;
+	gap: 20px;
+}
+
+.container-buttons-card button {
+	border: none;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	box-shadow: 0px 0px 15px #00000025;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 18px;
+}
+
+/* ********************************** */
+/*         LISTA DE FAVORITOS         */
+/* ********************************** */
+.container-list-favorites {
+	position: fixed;
+	top: 0;
+	right: 0;
+	transform: translateX(400px);
+	background-color: #555;
+	opacity: 0;
+	width: 400px;
+	height: 100vh;
+	transition: all 0.5s linear;
+}
+
+.container-list-favorites.show {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.header-favorite {
+	padding: 15px 30px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header-favorite i {
+	cursor: pointer;
+}
+
+.list-favorites {
+	padding: 35px 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+
+.list-favorites .card-favorite {
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0px 0px 20px #00000065;
+	padding: 20px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 30px;
+}
+
+.card-favorite .title {
+	color: #000;
+	flex: 1;
+}
+
+.card-favorite p:last-child {
+	font-weight: 700;
+	font-size: 22px;
+	color: #000;
+}
+
+/* ------------------- */
+
+#added-favorite {
+	color: red;
+	display: none;
+}
+
+#favorite-regular.active {
+	background-color: red;
+	display: none;
+}
+
+#added-favorite.active {
+	display: block;
+	color: pink;
 }

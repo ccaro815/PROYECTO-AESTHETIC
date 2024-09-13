@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify
+from flask import Flask, g, render_template, request, redirect, url_for, flash, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -62,6 +62,12 @@ class FavoriteService(db.Model):
     user = db.relationship('User', backref=db.backref('favorite_services', lazy=True))
     service = db.relationship('Service', backref=db.backref('favorite_services', lazy=True))
 
+@app.before_request
+def add_user_to_template():
+    g.user_name = session.get('user_name', None)
+    g.user_apellido = session.get('user_apellido', None)
+    g.user_email = session.get('user_email', None)
+    g.avatar_color = session.get('avatar_color', None)
 
 def generate_random_color():
     return "#{:06x}".format(random.randint(0, 0xFFFFFF))
