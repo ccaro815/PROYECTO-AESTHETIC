@@ -5,32 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
     <link rel="stylesheet" href="/static/styles/TratamientoFacial.css">
-    <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
-
             <a href="{{ url_for('servicios') }}">
-                <img src="/static/media/Imagenes Pag.Facial/Imagen principal facial.jfif" alt="Aesthetic Estética Integral">
+                <img src="/static/media/Imagenes Pag.Facial/Imagen principal facial.jfif"
+                    alt="Aesthetic Estética Integral">
                 <div class="informacion">
                     <h1>Tratamiento Facial</h1>
-                    <p>"Mima tu rostro con nuestros tratamientos faciales personalizados. Utilizando técnicas avanzadas y productos de alta calidad, cada sesión está diseñada para hidratar, rejuvenecer y revitalizar tu piel. Ideal para combatir los signos del envejecimiento, mejorar la luminosidad y mantener una piel sana y radiante. ".
+                    <p>"Mima tu rostro con nuestros tratamientos faciales personalizados. Utilizando técnicas avanzadas
+                        y productos de alta calidad, cada sesión está diseñada para hidratar, rejuvenecer y revitalizar
+                        tu piel. Ideal para combatir los signos del envejecimiento, mejorar la luminosidad y mantener
+                        una piel sana y radiante. ".
                     </p>
                 </div>
             </a>
-            
         </div>
         <div class="right-panel">
-
             <!--<div class="image-block">
                 <div class="grid-container">
                     <div class="grid_item" data-name="p-1">
@@ -58,143 +52,113 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>-->
-        <div class="container-products">
-            <div class="card-product">
-                <div class="container-img">
-                    <img
-                        src="/static/media/Imagenes Pag.Facial/Limpieza facial profunda.png">
+              </div>
+            </div>-->
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Facial/Limpieza facial profunda.png">
                         alt="imagen Producto"
-                    />
-                </div>
-                <div class="content-card-product" data-product-id="1">
-                    <h3>Limpieza facial profunda</h3>
-                    <p>
-                        Este tratamiento elimina impurezas, puntos negros y exceso de grasa, dejando la piel limpia y renovada.
-                    </p>
-                    <div class="footer-card-product">
-                        <span class="price">$79.99</span>
+                        />
+                    </div>
+                    <div class="content-card-product" data-product-id="1">
+                        <h3>Limpieza facial profunda</h3>
+                        <p>
+                            Este tratamiento elimina impurezas, puntos negros y exceso de grasa, dejando la piel limpia
+                            y renovada.
+                        </p>
+                        <div class="footer-card-product">
+                            <span class="price">$79.99</span>
 
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i
-                                    class="fa-regular fa-star"
-                                    id="favorite-regular"
-                                ></i>
-                                <i
-                                    class="fa-solid fa-star"
-                                    id="added-favorite"
-                                ></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                    <i class="fa-solid fa-star" id="added-favorite"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-product">
-                <div class="container-img">
-                    <img
-                        src="/static/media/Imagenes Pag.Facial/Peeling químico.jpeg"
-                        alt="imagen Producto"
-                    />
-                </div>
-                <div class="content-card-product" data-product-id="2">
-                    <h3>Peeling químico</h3>
-                    <p>Utiliza ácidos suaves para exfoliar las capas superficiales de la piel, ayudando a reducir manchas, arrugas y cicatrices, promoviendo la regeneración celular.</p>
-                    <div class="footer-card-product">
-                        <span class="price">$129.99</span>
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Facial/Peeling químico.jpeg" alt="imagen Producto" />
+                    </div>
+                    <div class="content-card-product" data-product-id="2">
+                        <h3>Peeling químico</h3>
+                        <p>Utiliza ácidos suaves para exfoliar las capas superficiales de la piel, ayudando a reducir
+                            manchas, arrugas y cicatrices, promoviendo la regeneración celular.</p>
+                        <div class="footer-card-product">
+                            <span class="price">$129.99</span>
 
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i
-                                    class="fa-regular fa-star"
-                                    id="favorite-regular"
-                                ></i>
-                                <i
-                                    class="fa-solid fa-star"
-                                    id="added-favorite"
-                                ></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                    <i class="fa-solid fa-star" id="added-favorite"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-product">
-                <div class="container-img">
-                    <img
-                        src="/static/media/Imagenes Pag.Facial/Microdermoabrasión.png"
-                        alt="imagen Producto"
-                    />
-                </div>
-                <div class="content-card-product" data-product-id="3">
-                    <h3>Microdermoabrasión</h3>
-                    <p>
-                        Monitoriza salud, GPS integrado, resistente al agua.
-                    </p>
-                    <div class="footer-card-product">
-                        <span class="price">$199.99</span>
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Facial/Microdermoabrasión.png" alt="imagen Producto" />
+                    </div>
+                    <div class="content-card-product" data-product-id="3">
+                        <h3>Microdermoabrasión</h3>
+                        <p>
+                            Monitoriza salud, GPS integrado, resistente al agua.
+                        </p>
+                        <div class="footer-card-product">
+                            <span class="price">$199.99</span>
 
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i
-                                    class="fa-regular fa-star"
-                                    id="favorite-regular"
-                                ></i>
-                                <i
-                                    class="fa-solid fa-star"
-                                    id="added-favorite"
-                                ></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                    <i class="fa-solid fa-star" id="added-favorite"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card-product">
-                <div class="container-img">
-                    <img
-                        src="/static/media/Imagenes Pag.Facial/Tratamiento con ácido hialurónico.jpg"
-                        alt="imagen Producto"
-                    />
-                </div>
-                <div class="content-card-product" data-product-id="6">
-                    <h3>Tratamiento con ácido hialurónico</h3>
-                    <p>
-                        Hidrata profundamente y rejuvenece la piel, mejorando la elasticidad y reduciendo líneas de expresión. Se aplica mediante sueros o inyecciones.
-                    </p>
-                    <div class="footer-card-product">
-                        <span class="price">$49.99</span>
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Facial/Tratamiento con ácido hialurónico.jpg"
+                            alt="imagen Producto" />
+                    </div>
+                    <div class="content-card-product" data-product-id="6">
+                        <h3>Tratamiento con ácido hialurónico</h3>
+                        <p>
+                            Hidrata profundamente y rejuvenece la piel, mejorando la elasticidad y reduciendo líneas de
+                            expresión. Se aplica mediante sueros o inyecciones.
+                        </p>
+                        <div class="footer-card-product">
+                            <span class="price">$49.99</span>
 
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i
-                                    class="fa-regular fa-star"
-                                    id="favorite-regular"
-                                ></i>
-                                <i
-                                    class="fa-solid fa-star"
-                                    id="added-favorite"
-                                ></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                    <i class="fa-solid fa-star" id="added-favorite"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-bag-shopping"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!--<div class="service-preview">
+        <!--<div class="service-preview">
         <div class="service" data-target="p-1">
             <i class="fas fa-times"></i>
             <img src="/static/media/Imagenes Pag.Facial/Facial1.png">
@@ -205,7 +169,6 @@
                 <a href="#" class="cart">Agregar al Carrito</a>
             </div>
         </div>
-        
         <div class="service" data-target="p-2">
             <i class="fas fa-times"></i>
             <img src="/static/media/Imagenes Pag.Facial/Facial2.jfif">
@@ -239,8 +202,8 @@
             </div>
         </div>
     </div>-->
-
-    <script src="/static/scripts/Servicios.js"></script>
-    <script src="/static/scripts/Favoritos.js"></script>
+        <script src="/static/scripts/Servicios.js"></script>
+        <script src="/static/scripts/Favoritos.js"></script>
 </body>
+
 </html>

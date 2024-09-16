@@ -51,17 +51,6 @@ class VerificationToken(db.Model):
     expires_at = db.Column(db.DateTime, nullable=False)
     user = db.relationship('User', backref=db.backref('verification_tokens', lazy=True))
 
-class Service(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(150), nullable=False)
-
-class FavoriteService(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
-    service_id = db.Column(db.Integer, db.ForeignKey('service.id'), nullable=False)
-    user = db.relationship('User', backref=db.backref('favorite_services', lazy=True))
-    service = db.relationship('Service', backref=db.backref('favorite_services', lazy=True))
-
 @app.before_request
 def add_user_to_template():
     g.user_name = session.get('user_name', None)

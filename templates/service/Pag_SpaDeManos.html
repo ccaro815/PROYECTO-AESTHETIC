@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,31 +8,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <link rel="stylesheet" href="/static/styles/Spa.css">
-    <link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="container">
         <div class="left-panel">
-
             <a href="{{ url_for('servicios') }}">
                 <img src="/static/media/Imagenes Pag.Spa De Manos/Img Principal.jpeg" alt="Aesthetic Estética Integral">
                 <div class="informacion">
                     <h1>Spa de manos </h1>
-                    <p>"Cuida tus manos con nuestro exclusivo servicio de spa. Ofrecemos una experiencia relajante que incluye exfoliación, hidratación y tratamientos personalizados para embellecer y revitalizar tus manos. Elige entre una variedad de opciones diseñadas para dejar tus manos suaves, nutridas y con un aspecto impecable. "
+                    <p>"Cuida tus manos con nuestro exclusivo servicio de spa. Ofrecemos una experiencia relajante que
+                        incluye exfoliación, hidratación y tratamientos personalizados para embellecer y revitalizar tus
+                        manos. Elige entre una variedad de opciones diseñadas para dejar tus manos suaves, nutridas y
+                        con un aspecto impecable. "
                     </p>
                 </div>
             </a>
-            
         </div>
-        <!-- <div class="right-panel">
-
-            <div class="image-block">
+        <div class="right-panel">
+            <!-- <div class="image-block">
                 <div class="grid-container">
                     <div class="grid_item" data-name="p-1">
                         <img src="/static/media/Imagenes Pag.Spa De Manos/Img1.jpeg">
@@ -60,141 +58,111 @@
                 </div>
             </div>
         </div> -->
-    </div>
-    <div class="card-product">
-        <div class="container-img">
-            <img
-                src="/static/media/Imagenes Pag.Spa De Manos/Exfoliación e Hidratación Profunda.jpg">
-                alt="imagen Producto"
-            />
-        </div>
-        <div class="content-card-product" data-product-id="1">
-            <h3>Exfoliación e Hidratación Profunda</h3>
-            <p>
-                Un tratamiento exfoliante para eliminar células muertas de la piel, seguido de una hidratación intensa con aceites y cremas naturales, dejando las manos suaves y nutridas.
-            </p>
-            <div class="footer-card-product">
-                <span class="price">$79.99</span>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="/static/media/Imagenes Pag.Spa De Manos/Exfoliación e Hidratación Profunda.jpg">
+                    alt="imagen Producto"
+                    />
+                </div>
+                <div class="content-card-product" data-product-id="1">
+                    <h3>Exfoliación e Hidratación Profunda</h3>
+                    <p>
+                        Un tratamiento exfoliante para eliminar células muertas de la piel, seguido de una hidratación
+                        intensa con aceites y cremas naturales, dejando las manos suaves y nutridas.
+                    </p>
+                    <div class="footer-card-product">
+                        <span class="price">$79.99</span>
 
-                <div class="container-buttons-card">
-                    <button class="favorite">
-                        <i
-                            class="fa-regular fa-star"
-                            id="favorite-regular"
-                        ></i>
-                        <i
-                            class="fa-solid fa-star"
-                            id="added-favorite"
-                        ></i>
-                    </button>
-                    <button class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
+                        <div class="container-buttons-card">
+                            <button class="favorite">
+                                <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                <i class="fa-solid fa-star" id="added-favorite"></i>
+                            </button>
+                            <button class="cart">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="card-product">
-        <div class="container-img">
-            <img
-                src="/static/media/Imagenes Pag.Spa De Manos/Masaje Relajante de Manos.jpg"
-                alt="imagen Producto"
-            />
-        </div>
-        <div class="content-card-product" data-product-id="2">
-            <h3>Masaje Relajante de Manos</h3>
-            <p>Masaje específico para relajar los músculos de las manos y muñecas, utilizando técnicas suaves y cremas hidratantes o aceites esenciales.</p>
-            <div class="footer-card-product">
-                <span class="price">$129.99</span>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="/static/media/Imagenes Pag.Spa De Manos/Masaje Relajante de Manos.jpg"
+                        alt="imagen Producto" />
+                </div>
+                <div class="content-card-product" data-product-id="2">
+                    <h3>Masaje Relajante de Manos</h3>
+                    <p>Masaje específico para relajar los músculos de las manos y muñecas, utilizando técnicas suaves y
+                        cremas hidratantes o aceites esenciales.</p>
+                    <div class="footer-card-product">
+                        <span class="price">$129.99</span>
 
-                <div class="container-buttons-card">
-                    <button class="favorite">
-                        <i
-                            class="fa-regular fa-star"
-                            id="favorite-regular"
-                        ></i>
-                        <i
-                            class="fa-solid fa-star"
-                            id="added-favorite"
-                        ></i>
-                    </button>
-                    <button class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
+                        <div class="container-buttons-card">
+                            <button class="favorite">
+                                <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                <i class="fa-solid fa-star" id="added-favorite"></i>
+                            </button>
+                            <button class="cart">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="card-product">
-        <div class="container-img">
-            <img
-                src="/static/media/Imagenes Pag.Spa De Manos/Tratamiento de Parafina.jpg"
-                alt="imagen Producto"
-            />
-        </div>
-        <div class="content-card-product" data-product-id="3">
-            <h3>Tratamiento de Parafina</h3>
-            <p>
-                Baño de parafina caliente para suavizar la piel, mejorar la circulación y aliviar dolores articulares. Ideal para manos secas o agrietadas.
-            </p>
-            <div class="footer-card-product">
-                <span class="price">$199.99</span>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="/static/media/Imagenes Pag.Spa De Manos/Tratamiento de Parafina.jpg"
+                        alt="imagen Producto" />
+                </div>
+                <div class="content-card-product" data-product-id="3">
+                    <h3>Tratamiento de Parafina</h3>
+                    <p>
+                        Baño de parafina caliente para suavizar la piel, mejorar la circulación y aliviar dolores
+                        articulares. Ideal para manos secas o agrietadas.
+                    </p>
+                    <div class="footer-card-product">
+                        <span class="price">$199.99</span>
 
-                <div class="container-buttons-card">
-                    <button class="favorite">
-                        <i
-                            class="fa-regular fa-star"
-                            id="favorite-regular"
-                        ></i>
-                        <i
-                            class="fa-solid fa-star"
-                            id="added-favorite"
-                        ></i>
-                    </button>
-                    <button class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
+                        <div class="container-buttons-card">
+                            <button class="favorite">
+                                <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                <i class="fa-solid fa-star" id="added-favorite"></i>
+                            </button>
+                            <button class="cart">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="card-product">
-        <div class="container-img">
-            <img
-                src="/static/media/Imagenes Pag.Spa De Manos/Manicura SPA Completa.png"
-                alt="imagen Producto"
-            />
-        </div>
-        <div class="content-card-product" data-product-id="6">
-            <h3>Manicura SPA Completa</h3>
-            <p>
-                Incluye el corte y limado de uñas, tratamiento de cutículas, mascarilla hidratante y aplicación de esmalte de uñas con acabado brillante o natural.
-            </p>
-            <div class="footer-card-product">
-                <span class="price">$49.99</span>
+            <div class="card-product">
+                <div class="container-img">
+                    <img src="/static/media/Imagenes Pag.Spa De Manos/Manicura SPA Completa.png"
+                        alt="imagen Producto" />
+                </div>
+                <div class="content-card-product" data-product-id="6">
+                    <h3>Manicura SPA Completa</h3>
+                    <p>
+                        Incluye el corte y limado de uñas, tratamiento de cutículas, mascarilla hidratante y aplicación
+                        de esmalte de uñas con acabado brillante o natural.
+                    </p>
+                    <div class="footer-card-product">
+                        <span class="price">$49.99</span>
 
-                <div class="container-buttons-card">
-                    <button class="favorite">
-                        <i
-                            class="fa-regular fa-star"
-                            id="favorite-regular"
-                        ></i>
-                        <i
-                            class="fa-solid fa-star"
-                            id="added-favorite"
-                        ></i>
-                    </button>
-                    <button class="cart">
-                        <i class="fa-solid fa-bag-shopping"></i>
-                    </button>
+                        <div class="container-buttons-card">
+                            <button class="favorite">
+                                <i class="fa-regular fa-star" id="favorite-regular"></i>
+                                <i class="fa-solid fa-star" id="added-favorite"></i>
+                            </button>
+                            <button class="cart">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
-</div>
-</div>
-
-    <!-- <div class="service-preview">
+            <!-- <div class="service-preview">
         <div class="service" data-target="p-1">
             <i class="fas fa-times"></i>
             <img src="/static/media/Imagenes Pag.Facial/Facial1.png">
@@ -240,7 +208,8 @@
         </div>
     </div> -->
 
-    <script src="/static/scripts/Servicios.js"></script>
-    <script src="/static/scripts/Favoritos.js"></script>
+            <script src="/static/scripts/Servicios.js"></script>
+            <script src="/static/scripts/Favoritos.js"></script>
 </body>
+
 </html>
