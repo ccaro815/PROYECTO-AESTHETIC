@@ -9,10 +9,12 @@ const listFavorites = document.querySelector('.list-favorites');
 
 let favorites = [];
 
+// Actualizar favoritos en localStorage
 const updateFavoritesInLocalStorage = () => {
 	localStorage.setItem('favorites', JSON.stringify(favorites));
 };
 
+// Cargar favoritos desde localStorage
 const loadFavoritesFromLocalStorage = () => {
 	const storedFavorites = localStorage.getItem('favorites');
 
@@ -22,23 +24,35 @@ const loadFavoritesFromLocalStorage = () => {
 	}
 };
 
+// Alternar favoritos (añadir o eliminar)
 const toggleFavorite = product => {
 	const index = favorites.findIndex(
 		element => element.id === product.id
 	);
 
 	if (index > -1) {
+		// Si ya está en favoritos, lo eliminamos
 		favorites.splice(index, 1);
-		updateFavoritesInLocalStorage();
 	} else {
+		// Si no está, lo agregamos
 		favorites.push(product);
-		updateFavoritesInLocalStorage();
 	}
+	// Actualizar el localStorage después de modificar favoritos
+	updateFavoritesInLocalStorage();
 };
 
+// Función para eliminar el producto de favoritos
+const removeFromFavorites = (productId) => {
+	favorites = favorites.filter(fav => fav.id !== productId);
+	updateFavoritesInLocalStorage();  // Actualizar el localStorage
+	showHTML();  // Actualizar la interfaz
+};
+
+// Actualizar la lista de favoritos en el menú
 const updateFavoriteMenu = () => {
 	listFavorites.innerHTML = '';
 
+	// Recorrer todos los favoritos y mostrarlos en la lista
 	favorites.forEach(fav => {
 		// Crear un nuevo elemento 'div' para el producto favorito
 		const favoriteCard = document.createElement('div');
@@ -55,11 +69,24 @@ const updateFavoriteMenu = () => {
 		priceElement.textContent = fav.price;
 		favoriteCard.appendChild(priceElement);
 
+		// Crear y añadir el botón de eliminar
+		const deleteButton = document.createElement('button');
+		deleteButton.textContent = 'X';  // Texto para el botón de eliminar
+		deleteButton.classList.add('delete-favorite');
+		deleteButton.addEventListener('click', () => {
+			removeFromFavorites(fav.id);  // Llamar a la función para eliminar
+		});
+		favoriteCard.appendChild(deleteButton);
+
 		// Añadir el producto favorito a la lista
 		listFavorites.appendChild(favoriteCard);
 	});
+
+	// Actualizar el contador de favoritos
+	counterFavorites.textContent = favorites.length;
 };
 
+// Mostrar HTML actualizado
 const showHTML = () => {
 	products.forEach(product => {
 		const contentProduct = product.querySelector(
@@ -81,10 +108,11 @@ const showHTML = () => {
 		favoriteActiveButton.classList.toggle('active', isFavorite);
 	});
 
-	counterFavorites.textContent = favorites.length;
+	// Actualizar la lista de favoritos y el contador
 	updateFavoriteMenu();
 };
 
+// Añadir eventos a los botones de favorito
 btnsFavorite.forEach(button => {
 	button.addEventListener('click', e => {
 		const card = e.target.closest('.content-card-product');
@@ -101,6 +129,7 @@ btnsFavorite.forEach(button => {
 	});
 });
 
+// Controlar apertura y cierre del menú de favoritos
 const btnClose = document.querySelector('#btn-close');
 const buttonHeaderFavorite = document.querySelector(
 	'#button-header-favorite'
@@ -114,5 +143,7 @@ btnClose.addEventListener('click', () => {
 	containerListFavorites.classList.remove('show');
 });
 
+// Cargar favoritos al iniciar la página
 loadFavoritesFromLocalStorage();
 updateFavoriteMenu();
+
