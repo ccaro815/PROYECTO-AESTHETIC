@@ -392,17 +392,12 @@ a:hover {
 
 /* ------------------- */
 
-#added-favorite {
-	color: red;
-	display: none;
+/* Corazón vacío por defecto */
+.favorite .fa-heart {
+    color: black;
 }
 
-#favorite-regular.active {
-	background-color: red;
-	display: none;
-}
-
-#added-favorite.active {
-	display: block;
-	color: pink;
+/* Corazón lleno cuando está marcado como favorito */
+.favorite.active .fa-heart {
+    color: pink; /* Cambia a color rosa cuando es favorito */
 }
