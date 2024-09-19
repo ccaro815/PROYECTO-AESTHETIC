@@ -240,7 +240,7 @@ def servicios():
 
 @app.route('/tratamientos_corporales')
 def tratamientos_corporales():
-    return render_template('service/Pag_Tratamiento.html')
+    return render_template('service/Pag_Tratamiento Corporales.html')
 
 @app.route('/tratamientos_facial')
 def tratamiento_facial():
