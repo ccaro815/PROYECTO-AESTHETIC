@@ -68,6 +68,7 @@ body {
     border-radius: 30px;
     object-fit: cover;
     padding: 5px;
+    opacity: .6;
 }
 
 .right-panel {
