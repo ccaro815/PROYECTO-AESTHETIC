@@ -452,6 +452,18 @@ button:hover {
 	color: #000;
 }
 
+/*----------- MAPA ---------- */
+.map {
+  text-align: right;
+  margin: 20px 0;
+}
+
+.map img {
+  width: 100%;
+  height: auto;
+}
+
+
 
 
 
