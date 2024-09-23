@@ -37,27 +37,15 @@ body {
 
 .informacion{
     position: absolute;
-    margin-top: 47px;
+    margin-top: 25%;
     padding: 15px;
     color: #000000;
-    border-radius: 30px;
     text-align: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .left-panel .informacion{
-    width: 50%;
+    width: 45%;
     height: 60%;
-    transition: 1s;
-}
-
-.left-panel:hover .informacion{
-    opacity: 1;
-    transition: height 1s, transform 1s, background-color 1s;
-    transform: translateY(340px);
-    height: 200px;
-    width: 650px;
 }
 
 
