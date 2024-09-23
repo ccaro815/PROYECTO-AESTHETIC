@@ -270,9 +270,9 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
-@app.route('/reservas')
-def reservas():
-    return render_template('Reservas.html')
+@app.route('/calendario')
+def calendario():
+    return render_template('Calendario.html')
 
 @app.route('/carrito')
 def carrito():
