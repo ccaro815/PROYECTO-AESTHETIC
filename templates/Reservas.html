@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Aesthetic Estética Integral</title>
+    <link rel="stylesheet" href="../static/styles/Reservas.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="left-container">
+            <h1>Reservas</h1>
+            <div class="logo">
+                <a href="{{ url_for('home') }}">
+                    <img src="../static/media/Imagenes Pag. Login/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
+                </a>
+            </div>
+        </div>
+        <div class="right-container">
+            <section class="calendars">
+                <div class="legend">
+                    <span class="dot available"></span> Disponible
+                    <span class="dot reserved"></span> Reservado
+                </div>
+                <div class="calendar">
+                    <h2>Septiembre 2024</h2>
+                    <table>
+                        <tr>
+                            <th>L</th><th>M</th><th>M</th><th>J</th><th>V</th>
+                        </tr>
+                        <tr>
+                            <td>2</td><td></td><td></td><td></td><td>6</td>
+                        </tr>
+                        <tr>
+                            <td>9</td><td>10</td><td>11</td><td>12</td><td class="reserved">13</td>
+                        </tr>
+                        <tr>
+                            <td>16</td><td class="reserved">17</td><td class="reserved">18</td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td class="reserved">24</td><td></td><td></td><td></td><td></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="calendar">
+                    <h2>Octubre 2024</h2>
+                    <table>
+                        <tr>
+                            <th>L</th><th>M</th><th>M</th><th>J</th><th>V</th>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td class="reserved">3</td><td class="reserved">4</td>
+                        </tr>
+                        <tr>
+                            <td class="reserved">7</td><td class="reserved">8</td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+
+            <section class="instructions">
+                <ul>
+                    <li>Seleccione la fecha disponible para realizar su reserva. Le confirmaremos los detalles a la brevedad.</li>
+                    <li>Elige tu fecha preferida y asegúrate un lugar en nuestro servicio. ¡Gracias por confiar en nosotros!</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>
+                <strong>© 2024 Para Estetica AESTHETIC. Creado por el Equipo 4</strong>
+            </p>
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61563739507826" target="_block" class="iconofacebook">
+                <img src="../static/media/Imagenes Pag. Principal/facebook.png"
+                    alt="logofacebook" />
+            </a>
+            <a href="#" class="iconoinstagram">
+                <img src="../static/media/Imagenes Pag. Principal/instagram.png"
+                    alt="logoinstagram" />
+            </a>
+            <a href="#" class="iconolinkedin">
+                <img src="../static/media/Imagenes Pag. Principal/linkedin.png"
+                    alt="logolinkedin" />
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

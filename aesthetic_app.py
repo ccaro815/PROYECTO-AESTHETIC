@@ -270,6 +270,10 @@ def gif_card():
 def contactos():
     return render_template('Contactos.html')
 
+@app.route('/reservas')
+def reservas():
+    return render_template('Reservas.html')
+
 @app.route('/carrito')
 def carrito():
     user_name = session.get('user_name', None)
