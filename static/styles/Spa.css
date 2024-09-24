@@ -37,10 +37,11 @@ body {
 
 .informacion{
     position: absolute;
-    margin-top: 25%;
+    margin-top: 28%;
     padding: 15px;
     color: #000000;
     text-align: center;
+    font-size: 20px;
 }
 
 .left-panel .informacion{

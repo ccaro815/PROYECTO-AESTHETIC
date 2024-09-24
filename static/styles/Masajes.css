@@ -41,10 +41,11 @@ body {
     padding: 15px;
     color: #000000;
     text-align: center;
+    font-size: 20px;
 }
 
 .left-panel .informacion{
-    width: 45%;
+    width: 34%;
 }
 
 
