@@ -41,11 +41,12 @@ body {
     color: #000000;
     border-radius: 30px;
     text-align: center;
+    font-size: 20px;
 
 }
 
 .left-panel .informacion{
-    width: 45%;
+    width: 40%;
 }
 
 
