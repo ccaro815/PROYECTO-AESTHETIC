@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #f5d9e0;
 }
 
-.main-container{
-        display: flex;
-        height: 100vh;
+.main-container {
+    display: flex;
+    height: 100vh;
 }
 
 .left-container {
@@ -24,7 +24,10 @@ body {
 
 .right-container {
     flex: 2;
-    padding-left: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -39,11 +42,80 @@ h1 {
     margin-top: 70px;
 }
 
-.calendars {
+/* Contenedor de los dos calendarios */
+.calendars-container {
     display: flex;
     justify-content: space-around;
+    gap: 20px;
 }
 
+/* Estilo general del calendario */
+.calendar {
+    width: 80%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo del segundo calendario */
+.second-calendar {
+    opacity: 0.7; /* Esto hace que se vea distinto para notar que no tiene funcionalidad */
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.calendar-day {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.calendar-day.available {
+    background-color: #cfe9e5;
+}
+
+.calendar-day.unavailable {
+    background-color: #f5d9e0;
+    color: #999;
+}
+
+.calendar-day:hover {
+    background-color: #ddd;
+}
+
+.calendar-day.selected {
+    background-color: #b37b7b;
+    color: #fff;
+}
+
+.calendar-day.range {
+    background-color: #f5d9e0;
+}
+
+/* Leyenda de colores */
 .legend {
     display: flex;
     justify-content: center;
@@ -67,34 +139,27 @@ h1 {
     background-color: #b37b7b;
 }
 
-.calendar {
-    text-align: left;
-}
-
-.calendar h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #7d4a4a;
-}
-
-table {
-    width: 100%;
-    border-spacing: 10px;
+/* Botón de reserva */
+.reservation-button {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #6a2e39;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
     text-align: center;
 }
 
-table th, table td {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ffe3e3;
+.reservation-button:hover {
+    background-color: #5e2530;
 }
 
-table td.reserved {
-    background-color: #b37b7b;
-    color: white;
-}
-
+/* Instrucciones y pie de página */
 .instructions ul {
     list-style: none;
     text-align: left;
@@ -110,99 +175,19 @@ table td.reserved {
     background-color: #d08590;
     padding: 5px 10px;
     display: flex;
-  }
-  
-  .footer-content {
+}
+
+.footer-content {
     flex: 1;
     text-align: left;
-  }
-  
-  .social-icons {
+}
+
+.social-icons {
     display: flex;
     justify-content: flex-end;
-  }
-  
-  .social-icons a {
+}
+
+.social-icons a {
     margin-left: 10px;
-  }
-
-
-.calendar{
-    width: 70%;
-    height: 50%;
-    background-color: #fff;
-    margin: 0 10%;
-    font-family: Arial, sans-serif;
-    border-radius: 5px;
-    box-shadow: 0 10px 29px -7px rgba(63,63,63,0.48);
 }
 
-.calendar-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.calendar-header button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.calendar-body{
-    display: grid;
-    grid-template-columns: repeat(7,2fr);
-}
-
-.calendar-day{
-    border: 1px solid #fff;
-    border-radius: 50%;
-    padding: 10px;
-    margin: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.calendar-day:hover{
-    background-color: #ddd !important;
-    transition: background-color 0.3s ease;
-}
-
-.calendar-day.selected{
-    border: 1px solid #FFE8ED;
-    background-color: #b37b7b;
-}
-
-.calendar-day.range{
-    border: 1px solid #f5d9e0;
-    background-color: #f5d9e0;
-}
-
-#prevBtn, #nextBtn{
-    width: 40px;
-    height: 40px;
-    padding: 10px;
-    margin: 0 10px 0 10px;
-    border-radius: 50%;
-    background-color: #fff;
-}
-
-#prevBtn:hover{
-    background-color: #ddd !important;
-    transition: background-color 0.3s ease;
-}
-
-#nextBtn:hover{
-    background-color: #ddd !important;
-    transition: background-color 0.3s ease;
-}
-
-#selectedDates{
-    font-family: 'Poppins';
-}
-
-#currentMonth{
-    font-family: 'Poppins';
-    font-size: 18px;
-}

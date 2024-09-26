@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reservas</title>
     <link rel="stylesheet" href="../static/styles/Calendario.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
 </head>
 <body>
 
     <div class="main-container">
+        <!-- Contenedor Izquierdo -->
         <div class="left-container">
             <h1>Reservas</h1>
             <div class="logo">
@@ -18,16 +19,33 @@
                 </a>
             </div>
         </div>
+
+        <!-- Contenedor Derecho -->
         <div class="right-container">
             <h3 id="selectedDates">Fechas seleccionadas:</h3>
-            <div class="calendar">
-                <div class="calendar-header">
-                    <button id="prevBtn" class="calendar-btn"><i class="fas fa-angle-left"></i></button>
-                    <h2 id="currentMonth"></h2>
-                    <button id="nextBtn" class="calendar-btn"><i class="fas fa-angle-right"></i></button>
+            <div class="calendars-container">
+                <!-- Calendario Principal -->
+                <div class="calendar">
+                    <div class="calendar-header">
+                        <button id="prevBtn" class="calendar-btn"><i class="fas fa-angle-left"></i></button>
+                        <h2 id="currentMonth"></h2>
+                        <button id="nextBtn" class="calendar-btn"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                    <div id="calendarBody" class="calendar-body"></div>
                 </div>
-                <div id="calendarBody" class="calendar-body"></div>
+
+                <!-- Segundo Calendario Sin Funcionalidad -->
+                <div class="calendar second-calendar">
+                    <div class="calendar-header">
+                        <button id="prevBtn2" class="calendar-btn"><i class="fas fa-angle-left"></i></button>
+                        <h2 id="currentMonth2"></h2>
+                        <button id="nextBtn2" class="calendar-btn"><i class="fas fa-angle-right"></i></button>
+                    </div>
+                    <div id="calendarBody2" class="calendar-body"></div>
+                </div>
             </div>
+
+            <!-- Leyenda de colores -->
             <section class="calendars">
                 <div class="legend">
                     <span class="dot available"></span> Disponible
@@ -35,6 +53,12 @@
                 </div>
             </section>
 
+            <!-- Botón de reserva -->
+            <div class="reservation-container">
+                <button class="reservation-button">Iniciar reserva</button>
+            </div>
+
+            <!-- Instrucciones -->
             <section class="instructions">
                 <ul>
                     <li>Seleccione la fecha disponible para realizar su reserva. Le confirmaremos los detalles a la brevedad.</li>
@@ -44,6 +68,7 @@
         </div>
     </div>
 
+    <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-content">
             <p>
@@ -52,16 +77,13 @@
         </div>
         <div class="social-icons">
             <a href="https://www.facebook.com/profile.php?id=61563739507826" target="_block" class="iconofacebook">
-                <img src="../static/media/Imagenes Pag. Principal/facebook.png"
-                    alt="logofacebook" />
+                <img src="../static/media/Imagenes Pag. Principal/facebook.png" alt="logofacebook" />
             </a>
             <a href="#" class="iconoinstagram">
-                <img src="../static/media/Imagenes Pag. Principal/instagram.png"
-                    alt="logoinstagram" />
+                <img src="../static/media/Imagenes Pag. Principal/instagram.png" alt="logoinstagram" />
             </a>
             <a href="#" class="iconolinkedin">
-                <img src="../static/media/Imagenes Pag. Principal/linkedin.png"
-                    alt="logolinkedin" />
+                <img src="../static/media/Imagenes Pag. Principal/linkedin.png" alt="logolinkedin" />
             </a>
         </div>
     </footer>
