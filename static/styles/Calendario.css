@@ -139,10 +139,8 @@ h1 {
     background-color: #b37b7b;
 }
 
-/* Botón de reserva */
 .reservation-button {
     display: block;
-    width: 80%;
     padding: 10px;
     margin-top: 20px;
     background-color: #6a2e39;
@@ -159,7 +157,6 @@ h1 {
     background-color: #5e2530;
 }
 
-/* Instrucciones y pie de página */
 .instructions ul {
     list-style: none;
     text-align: left;

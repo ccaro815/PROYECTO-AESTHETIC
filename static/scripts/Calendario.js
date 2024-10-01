@@ -58,11 +58,11 @@ function selectDate(day) {
 
 function updateSelectedDates() {
     if (startDate && endDate) {
-        selectedDatesElement.textContent = `Fechas seleccionadas: ${formatDate(startDate)} - ${formatDate(endDate)}`;
+        selectedDatesElement.textContent = `Fechas disponibles: ${formatDate(startDate)} - ${formatDate(endDate)}`;
     } else if (startDate) {
-        selectedDatesElement.textContent = `Fechas seleccionadas: ${formatDate(startDate)}`;
+        selectedDatesElement.textContent = `Fechas disponibles: ${formatDate(startDate)}`;
     } else {
-        selectedDatesElement.textContent = `Fechas seleccionadas:`;
+        selectedDatesElement.textContent = `Fechas disponibles:`;
     }
 }
 
