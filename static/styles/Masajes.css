@@ -20,7 +20,6 @@ body {
     display: block;
     flex-direction: column;    
     align-items: center;
-    width: 50%;
 
 }
 
@@ -41,19 +40,19 @@ body {
     padding: 15px;
     color: #000000;
     text-align: center;
+    font-size: 20px;
 }
 
 .left-panel .informacion{
-    width: 45%;
+    width: 34%;
 }
 
 
 .left-panel img {
     position: absolute;
     display: block;
-    width: 39%;
+    width: 40%;
     height: 95%;
-    background-size: cover;
     border-radius: 30px;
     object-fit: cover;
     opacity: .6;
@@ -65,7 +64,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5px;
+    margin-top: 90px;
 }
 
 .right-panel h1{
