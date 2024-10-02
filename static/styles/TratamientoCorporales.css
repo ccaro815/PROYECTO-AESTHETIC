@@ -259,6 +259,9 @@ a:hover {
 	margin: 30px 0;
 	gap: 30px;
 }
+.h3{
+    text-align: center;
+}
 
 .card-product {
 	display: flex;

@@ -254,6 +254,28 @@ a:hover {
     text-decoration: underline;
 }
 
+/*            FOOTER             
+
+.footer {
+    background-color: #d08590;
+    padding: 5px 10px;
+    display: flex;
+  }
+  
+  .footer-content {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .social-icons a {
+    margin-left: 10px;
+  }         */               
+
 /*         MARCAR FAVORITOS         */
 
 .container-products {
