@@ -10,7 +10,7 @@ from datetime import datetime, timedelta
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///Aestethic.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
@@ -50,6 +50,15 @@ class VerificationToken(db.Model):
     created_at = db.Column(db.DateTime, default=db.func.current_timestamp())
     expires_at = db.Column(db.DateTime, nullable=False)
     user = db.relationship('User', backref=db.backref('verification_tokens', lazy=True))
+    
+class Servicio(db.Model):
+    __tablename__ = 'servicio'
+    id = db.Column(db.Integer, primary_key=True)
+    titulo = db.Column(db.String, nullable=False)
+    categoria = db.Column(db.String, nullable=False)
+    descripcion = db.Column(db.String, nullable=True)
+    precio = db.Column(db.Float, nullable=False)
+
 
 @app.before_request
 def add_user_to_template():
