@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (result.success) {
                     registerForm.style.display = 'none';
                     successMessage.style.display = 'flex';
+                } else {
+                    alert(result.message || 'Hubo un error en el registro.');
                 }
             } else {
                 console.error('Error en la respuesta del servidor');
@@ -32,5 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
 
 
