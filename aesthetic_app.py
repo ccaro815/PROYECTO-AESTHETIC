@@ -130,30 +130,38 @@ def logout():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        nombre = request.form['nombre']
-        apellido = request.form['apellido']
-        email = request.form['email']
-        password = request.form['contrasena']
+        if request.is_json:
+            data = request.get_json()
+            nombre = data.get('nombre')
+            apellido = data.get('apellido')
+            email = data.get('email')
+            password = data.get('contrasena')
 
-        hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            # Verificar si el email ya está registrado
+            if User.query.filter_by(email=email).first():
+                return jsonify(success=False, message='El correo ya está registrado.')
 
-        new_user = User(nombre=nombre, apellido=apellido, email=email, password=hashed_password)
-        db.session.add(new_user)
-        db.session.commit()
+            hashed_password = generate_password_hash(password, method='pbkdf2:sha256')
+            new_user = User(nombre=nombre, apellido=apellido, email=email, password=hashed_password)
+            db.session.add(new_user)
+            db.session.commit()
 
-        token = generate_confirmation_token(new_user.email)
-        expires_at = datetime.utcnow() + timedelta(hours=48)
-        verification_token = VerificationToken(token=token, user_id=new_user.id, expires_at=expires_at)
-        db.session.add(verification_token)
-        db.session.commit()
+            # Generar y almacenar el token de verificación
+            token = generate_confirmation_token(new_user.email)
+            expires_at = datetime.utcnow() + timedelta(hours=48)
+            verification_token = VerificationToken(token=token, user_id=new_user.id, expires_at=expires_at)
+            db.session.add(verification_token)
+            db.session.commit()
 
-        confirm_url = url_for('confirm_email', token=token, _external=True)
-        html = render_template('activate.html', confirm_url=confirm_url)
-        subject = "Por favor confirma tu correo"
-        send_email(new_user.email, subject, html)
+            # Enviar el correo de confirmación
+            confirm_url = url_for('confirm_email', token=token, _external=True)
+            html = render_template('activate.html', confirm_url=confirm_url)
+            subject = "Por favor confirma tu correo"
+            send_email(new_user.email, subject, html)
 
-        flash('Registro exitoso. Por favor, revisa tu correo para confirmar tu cuenta.', 'success')
-        return redirect(url_for('register_success'))
+            return jsonify(success=True)
+        else:
+            return jsonify(success=False, message="Tipo de contenido no soportado"), 415
     return render_template('Registro.html')
 
 @app.route('/register_success')

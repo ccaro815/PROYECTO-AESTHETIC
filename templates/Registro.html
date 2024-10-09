@@ -4,57 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <link rel="shortcut icon" type="image/x" href="../static/media/Imagenes Pag. Principal/logo_encabezado.png">
     <link rel="stylesheet" href="../static/styles/Registro.css">
 </head>
 <body>
     <div class="container">
         <div class="left-panel">
             <h1>CREA TU CUENTA</h1>
-           
             <a href="{{ url_for('home') }}">
                 <img src="../static/media/Imagenes Pag. Registro/logo_encabezado.png" alt="Aesthetic Estética Integral" class="logo">
             </a>
         </div>
         <div class="right-panel">
             <h2>Crear Cuenta</h2>
-            <h5>Bienvenidos a Aesthetic </h5>
-            <form action="{{ url_for('register') }}" method="post">
+            <h5>Bienvenidos a Aesthetic</h5>
+            <form id="registerForm" method="post">
                 <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre" required>
-              
                 <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido" required>
-              
                 <input type="email" id="email" name="email" placeholder="Introduce tu email" required>
-              
                 <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
-              
                 <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" placeholder="Repite contraseña" required>
-                
                 <div class="terms">
-                  <input type="checkbox" id="terms" name="terms" required>
-                  <label for="terms">He leído y acepto los<a href="#"> terminos y condiciones de Aesthetic</a></label>
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">He leído y acepto los <a href="#">términos y condiciones de Aesthetic</a></label>
                 </div>
                 <button type="submit">REGISTRARSE</button>
-              </form>
-              <p>¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Login</a></p>
+            </form>
+            <div id="successMessage" style="display: none;">
+                <h1>¡Se ha registrado con éxito!</h1>
+                <p>El proceso se ha realizado correctamente. Le hemos enviado un correo electrónico con el enlace para verificar su cuenta antes de ingresar a la plataforma.</p>
+            </div>
         </div>
     </div>
-    <footer class="footer">
-        <div class="footer-content">
-            <p><strong>© 2024 Para Estetica AESTHETIC. Creado por el Equipo 4</strong></p>
-        </div>
-        <div class="social-icons">
-            <a href="https://www.facebook.com/profile.php?id=61563739507826" class="iconofacebook">
-                <img src="../static/media/Imagenes Pag. Registro/facebook.png" alt="logofacebook" />
-            </a>
-            <a href="https://www.instagram.com/aesthetic2024_ok?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="iconoinstagram">
-                <img src="../static/media/Imagenes Pag. Registro/instagram.png" alt="logoinstagram" />
-            </a>
-            <a href="#" class="iconolinkedin">
-                <img src="../static/media/Imagenes Pag. Registro/linkedin.png" alt="logolinkedin" />
-            </a>
-        </div>
-    </footer>
+    <script src="../static/scripts/Registro.js"></script>
 </body>
 </html>
 
