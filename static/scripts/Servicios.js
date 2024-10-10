@@ -1,22 +1,13 @@
-let serviceContainer = document.querySelector('.service-preview');
-let serviceBox = serviceContainer.querySelectorAll('.service');
+const stars = document.querySelectorAll(".star");
 
-document.querySelectorAll('.grid-container .grid_item').forEach(grid_item =>{
-  grid_item.onclick = () =>{
-    serviceContainer.style.display = 'flex';
-    let name = grid_item.getAttribute('data-name');
-    serviceBox.forEach(service =>{
-      let target = service.getAttribute('data-target');
-      if(name == target){
-        service.classList.add('active');
-      }
-    });
-  };
-});
+stars.forEeach(function(star, index) {
+  star.addEventListener('click', function() {
+    for (let i = 0; i<=index; i++) {
+      stars[i] .classList.add('checked');
+    }
+    for (let i = index+1; i<stars.length; i++){
+      stars[i] .classList.remove('checked');
+    }
 
-serviceBox.forEach(close =>{
-  close.querySelector('.fa-times').onclick = () =>{
-    close.classList.remove('active');
-    serviceContainer.style.display = 'none';
-  };
-});
+  })
+})

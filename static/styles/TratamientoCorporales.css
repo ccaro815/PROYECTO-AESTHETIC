@@ -394,10 +394,19 @@ a:hover {
 
 /* calificacion */
 
-.fa-star::before{
+.rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star{
     font-size: 21px;
-    color: white;
+    color: grey;
     transition: color 0.3s;
     cursor: pointer;
+}
+
+.star:hover, .star.checked {
+    color: gold;
 }
 
