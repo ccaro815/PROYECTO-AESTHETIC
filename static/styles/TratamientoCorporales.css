@@ -406,7 +406,8 @@ a:hover {
     cursor: pointer;
 }
 
-.star:hover, .star.checked {
+.star:hover,
+.star.checked {
     color: gold;
 }
 
