@@ -415,3 +415,22 @@ a:hover {
 .favorite.active .fa-heart {
     color: pink; /* Cambia a color rosa cuando es favorito */
 }
+
+/* calificacion */
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star{
+    font-size: 21px;
+    color: grey;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.checked {
+    color: gold;
+}
