@@ -16,6 +16,7 @@ header {
     
 }
 
+
 .menu-header {
 	display: flex;
 	align-items: center;
@@ -51,7 +52,8 @@ header {
 .left-panel img {
     max-width: 100%;
     height: auto;
-    margin-top: 100px;
+    margin-top: 80px;
+	
 }
 
 .right-panel {
@@ -123,69 +125,193 @@ body > .footer {
     align-self: flex-end;
 }
 
-/*         MARCAR FAVORITOS         */
+/*         WEB DESDE EL CELU        */
 
-.container-products {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	margin: 30px 0;
-	gap: 30px;
+@media (width >=928px){
+	#buscador{
+		display: none;
+	}
 }
 
-.card-product {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	cursor: pointer;
+@media screen and (width <= 600px){
+	header{
+		background-color: #FFE8ED;
+	}
+
+	.menu-header{
+		margin-left: 0;
+	}
+
+	#buscador{
+		display: block;
+		padding-left: 20%;
+	}
+
+	#buscador i{
+		margin: 15px;
+		color: #FCFEFE;
+		font-size: 20px;
+		position: absolute;
+		left: 25%;
+		top: 1.5%;
+	}
+
+	input{
+		margin: 15px;
+		width: 230px;
+		height: 40px;
+		background-color: #BC7395;
+		border: none;
+		border-radius: 20px;
+	}
+
+	::placeholder {
+		padding-left: 53px;
+		color: #FCFEFE;
+		font-size: 1.2em;
+	  }
+	  
+	.container {
+		display: block;
+		flex: 0;
+	}
+
+	.left-panel {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+
+	.left-panel h1{
+		color: #BC7395;
+		font-family: Nunito Sans;
+		font-size: 65px;
+		font-weight: 200;
+		line-height: 75.02px;
+		text-align: left;
+
+	}
+
+	.left-panel img{
+		padding: 0px 30px;
+		margin: -35px;
+		width: 170px;
+	}
+	
+	.right-panel{
+		padding: 0px;
+		background-color: #FFE8ED;
+
+	}
+
+	.form{
+		width: 232px;
+	}
+
+	button{
+		background-color: #BC7395;
+		color: #FFFFFF;
+		border-radius: 6px;
+	}
+
+	#button-header-favorite{
+		margin: 3px;
+		border-radius: 20px;
+	}
+
 }
 
-.content-card-product {
-	display: flex;
-	flex-direction: column;
-	padding: 10px 5px;
-}
+/*         WEB DESDE LA TABLET        */
 
-.container-img {
-	height: 210px;
-	border-radius: 12px;
-	overflow: hidden;
-}
+@media screen and (width >= 601px) and (width <= 927px){
+	header{
+		background-color: #FFE8ED;
+	}
 
-.container-img img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
+	.menu-header{
+		margin-left: 0;
+	}
 
-.footer-card-product {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0px;
-}
+	#buscador{
+		display: block;
+		padding-left: 23%;
+	}
 
+	#buscador i{
+		margin: 15px;
+		color: #FCFEFE;
+		font-size: 20px;
+		position: absolute;
+		left: 25%;
+		top: 1.5%;
+	}
 
-.price {
-	font-weight: 700;
-	font-size: 24px;
-	color: #555;
-}
+	input{
+		margin: 15px;
+		width: 280px;
+		height: 40px;
+		background-color: #BC7395;
+		border: none;
+		border-radius: 20px;
+	}
 
-.container-buttons-card {
-	display: flex;
-	gap: 20px;
-}
+	::placeholder {
+		padding-left: 53px;
+		color: #FCFEFE;
+		font-size: 1.2em;
+	  }
+	  
+	.container {
+		display: block;
+		flex: 0;
+	}
 
-.container-buttons-card button {
-	border: none;
-	background: none;
-	outline: none;
-	cursor: pointer;
-	box-shadow: 0px 0px 15px #00000025;
-	width: 40px;
-	height: 40px;
-	border-radius: 50%;
-	font-size: 18px;
+	.left-panel {
+		display: flex;
+		flex-direction: row-reverse;
+		align-items: center;
+	}
+
+	.left-panel h1{
+		color: #BC7395;
+		font-family: Nunito Sans;
+		font-size: 65px;
+		font-weight: 200;
+		line-height: 75.02px;
+		text-align: left;
+
+	}
+
+	.left-panel img{
+		padding: 0px 30px;
+		margin: -35px;
+		width: 170px;
+	}
+	
+	.right-panel{
+		padding: 0px;
+		background-color: #FFE8ED;
+
+	}
+
+	.header .social-icons{
+		display: none;
+	}
+	.form{
+		width: 232px;
+	}
+
+	button{
+		background-color: #BC7395;
+		color: #FFFFFF;
+		border-radius: 6px;
+	}
+
+	#button-header-favorite{
+		margin: 3px;
+		border-radius: 20px;
+	}
+
 }
 
 /* ********************************** */

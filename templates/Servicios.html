@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios</title>
+    <link href="fontawesome/fontawesome-free-6.6.0-web/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/styles/Servicios.css">
     <link rel="shortcut icon" type="image/x" href="../static/media/Imagenes Pag. Principal/logo_encabezado.png">
     <link
@@ -16,6 +17,10 @@
 </head>
 <body>
     <header>
+        <div id="buscador">
+            <input type="text" placeholder="Busqueda">
+            <i class="fa-solid fa-search"></i>
+          </div>
         
         <div class="menu-header">
             {% if g.user_name %}

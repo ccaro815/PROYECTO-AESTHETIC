@@ -215,8 +215,13 @@ header nav a {
 
 @media (max-width: 991px) {
   body {
-    padding: 0 100px;
+    padding: 0 ;
   }
+  
+  .contenedor-imagen h1{
+    font-size: 25px;
+  }
+  
 }
 
 .container {
@@ -404,6 +409,7 @@ button:hover {
 .suggestion-item:hover {
   background-color: #f0f0f0;
 }
+
 
 
 /* ********************************** */
