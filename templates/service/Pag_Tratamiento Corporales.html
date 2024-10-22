@@ -29,63 +29,75 @@
             </a>
         </div>
         <div class="right-panel">
-         <div class="container-products">
-            <div class="card-product">
-                <div class="container-img">
-                    <img src="/static/media/Imagenes Pag.Tratamientos Corporales/Corporal1.jpeg" alt="imagen Producto"/>
-                </div>
-                <div class="content-card-product" data-product-id="1">
-                    <h3>Exfoliación corporal</h3>
-                    <p>Un tratamiento que elimina las células muertas de la piel mejora su textura y luminosidad. Esto promueve la regeneración celular y deja la piel más suave y radiante.</p>
-                    <div class="footer-card-product">
-                        <span class="price">$79.99</span>
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i class="fa-regular fa-heart" id="favorite-1"></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
-                        </div>
-                        <div class="rating">
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
+            <div class="container-products">
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Tratamientos Corporales/Corporal1.jpeg" alt="imagen Producto"/>
+                    </div>
+                    <div class="content-card-product" data-product-id="1">
+                        <h3>Exfoliación corporal</h3>
+                        <p>Un tratamiento que elimina las células muertas de la piel mejora su textura y luminosidad. Esto promueve la regeneración celular y deja la piel más suave y radiante.</p>
+                        <div class="footer-card-product">
+                            <span class="price">$79.99</span>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-heart" id="favorite-1"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                                <button class="share">
+                                    <i class="fa-solid fa-share"></i>
+                                </button>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill star" data-value="1"></i>
+                                <i class="bi bi-star-fill star" data-value="2"></i>
+                                <i class="bi bi-star-fill star" data-value="3"></i>
+                                <i class="bi bi-star-fill star" data-value="4"></i>
+                                <i class="bi bi-star-fill star" data-value="5"></i>
+                            </div>
+                            <input type="hidden" class="rating-input" value="0">
+                            <div class="comment-section">
+                                <button class="submit-rating">Enviar calificación</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        
-            <div class="card-product">
-                <div class="container-img">
-                    <img src="/static/media/Imagenes Pag.Tratamientos Corporales/Corporal2.jpeg" alt="imagen Producto"/>
-                </div>
-                <div class="content-card-product" data-product-id="2">
-                    <h3>Envoltura de algas o barro</h3>
-                    <p>Ayuda a desintoxicar el cuerpo y a mejorar la circulación. Se aplica una capa de algas o barro en la piel, que luego se envuelve para que los nutrientes penetren profundamente.</p>
-                    <div class="footer-card-product">
-                        <span class="price">$129.99</span>
-        
-                        <div class="container-buttons-card">
-                            <button class="favorite">
-                                <i class="fa-regular fa-heart" id="favorite-2"></i>
-                            </button>
-                            <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
-                            </button>
-                        </div>
-                        <div class="rating">
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
+                <div class="card-product">
+                    <div class="container-img">
+                        <img src="/static/media/Imagenes Pag.Tratamientos Corporales/Corporal2.jpeg" alt="imagen Producto"/>
+                    </div>
+                    <div class="content-card-product" data-product-id="2">
+                        <h3>Envoltura de algas o barro</h3>
+                        <p>Ayuda a desintoxicar el cuerpo y a mejorar la circulación. Se aplica una capa de algas o barro en la piel, que luego se envuelve para que los nutrientes penetren profundamente.</p>
+                        <div class="footer-card-product">
+                            <span class="price">$129.99</span>
+                            <div class="container-buttons-card">
+                                <button class="favorite">
+                                    <i class="fa-regular fa-heart" id="favorite-2"></i>
+                                </button>
+                                <button class="cart">
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                </button>
+                                <button class="share">
+                                    <i class="fa-solid fa-share"></i>
+                                </button>
+                            </div>
+                            <div class="rating">
+                                <i class="bi bi-star-fill star" data-value="1"></i>
+                                <i class="bi bi-star-fill star" data-value="2"></i>
+                                <i class="bi bi-star-fill star" data-value="3"></i>
+                                <i class="bi bi-star-fill star" data-value="4"></i>
+                                <i class="bi bi-star-fill star" data-value="5"></i>
+                            </div>
+                            <div class="comment-section">
+                                <button class="submit-rating">Enviar calificación</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            
         
             <div class="card-product">
                 <div class="container-img">
@@ -102,15 +114,21 @@
                                 <i class="fa-regular fa-heart" id="favorite-3"></i>
                             </button>
                             <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            <button class="share">
+                                <i class="fa-solid fa-share"></i>
                             </button>
                         </div>
                         <div class="rating">
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star" data-value="1"></i>
+                            <i class="bi bi-star-fill star" data-value="2"></i>
+                            <i class="bi bi-star-fill star" data-value="3"></i>
+                            <i class="bi bi-star-fill star" data-value="4"></i>
+                            <i class="bi bi-star-fill star" data-value="5"></i>
+                        </div>
+                        <div class="comment-section">
+                            <button class="submit-rating">Enviar calificación</button>
                         </div>
                     </div>
                 </div>
@@ -131,15 +149,21 @@
                                 <i class="fa-regular fa-heart" id="favorite-4"></i>
                             </button>
                             <button class="cart">
-                                <i class="fa-solid fa-bag-shopping"></i>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </button>
+                            <button class="share">
+                                <i class="fa-solid fa-share"></i>
                             </button>
                         </div>
                         <div class="rating">
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
-                            <i class="bi bi-star-fill star"></i>
+                            <i class="bi bi-star-fill star" data-value="1"></i>
+                            <i class="bi bi-star-fill star" data-value="2"></i>
+                            <i class="bi bi-star-fill star" data-value="3"></i>
+                            <i class="bi bi-star-fill star" data-value="4"></i>
+                            <i class="bi bi-star-fill star" data-value="5"></i>
+                        </div>
+                        <div class="comment-section">
+                            <button class="submit-rating">Enviar calificación</button>
                         </div>
                     </div>
                 </div>

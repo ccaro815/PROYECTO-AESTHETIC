@@ -81,6 +81,10 @@
                 <input type="text" id="search-input" placeholder="Buscar..." oninput="showSuggestions(this.value)" onkeydown="searchService(event)" autocomplete="off" />
                 <div id="suggestions" class="suggestions-list"></div>
             </div>
+            <button class="share-button" onclick="openShareModal('Página Principal', 'Visítanos en nuestro centro de estética Aesthetic', 'https://tuweb.com', '/static/media/Imagenes Pag. Principal/logo_encabezado.png')">
+                <i class="fa-solid fa-share"></i> Compartir
+            </button>
+            
             {% endif %}
             <button class="cart-button" onclick="window.location.href='{{ url_for('carrito') }}'">🛒</button>
             {% if user_name %}
@@ -154,7 +158,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <div class="content">
             <h3>Nuestro Compromiso</h2>

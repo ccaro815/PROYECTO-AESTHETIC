@@ -72,6 +72,44 @@ document.addEventListener('click', function(event) {
   }
 });
 
+function openShareModal(pageTitle, pageDescription, pageUrl, pageImage) {
+  const modalContent = `
+    <div id="share-modal" class="modal">
+      <div class="modal-content">
+        <h4>Compartir ${pageTitle}</h4>
+        <p>${pageDescription}</p>
+        <img src="${pageImage}" alt="${pageTitle}" style="width: 100%; max-width: 300px;">
+
+        <p>Selecciona una red social para compartir:</p>
+        <div class="share-buttons">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}&quote=${encodeURIComponent(pageTitle + ' - ' + pageDescription)}" target="_blank">
+            <i class="fa-brands fa-facebook"></i> Facebook
+          </a>
+          <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(pageUrl)}&text=${encodeURIComponent(pageTitle + ' - ' + pageDescription)}" target="_blank">
+            <i class="fa-brands fa-twitter"></i> Twitter
+          </a>
+          <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(pageTitle + ' - ' + pageDescription + ' ' + pageUrl)}" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
+        <button id="close-modal-btn">Cerrar</button>
+      </div>
+    </div>
+  `;
+
+  document.body.insertAdjacentHTML('beforeend', modalContent);
+  document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+}
+
+function closeModal() {
+  const modal = document.getElementById('share-modal');
+  if (modal) {
+      modal.remove();
+  }
+}
+
+
+
 
 
 

@@ -223,18 +223,63 @@ a:hover {
 /* calificacion */
 
 .rating {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: flex-start;
+	gap: 5px;
 }
 
-.star{
-    font-size: 21px;
-    color: grey;
-    transition: color 0.3s;
-    cursor: pointer;
+.star {
+	font-size: 21px;
+	color: grey;
+	transition: color 0.3s;
+	cursor: pointer;
 }
 
 .star:hover,
 .star.checked {
-    color: gold;
+	color: gold;
 }
+
+
+/* COMPARTIR */
+
+.modal {
+	display: block;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.5);
+	z-index: 1000;
+  }
+  
+  .modal-content {
+	background-color: white;
+	margin: 10% auto;
+	padding: 20px;
+	width: 80%;
+	max-width: 400px;
+	border-radius: 10px;
+	text-align: center;
+  }
+  
+  .share-buttons a {
+	display: block;
+	margin: 10px 0;
+	text-decoration: none;
+	font-size: 18px;
+  }
+  
+  button {
+	background-color: #ffe8ed;
+	color: black;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+  }
+  
+  button:hover {
+	background-color: rosybrown;
+  }
